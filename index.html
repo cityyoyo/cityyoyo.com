@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityYoYo — AI Audio City Guide & Hands-Free Walking Tours for Japan, Korea, Asia & Worldwide</title>
+  <meta name="description" content="CityYoYo is an AI audio city guide with two ways to explore: tap any place on the map for an instant AI-narrated story, or put on your headphones and let Tour Mode narrate hands-free as you walk — with AirPods gestures, personalized interests, and live captions. Offline-ready, 6 languages, free. Perfect for travel in Japan, Korea, Vietnam, China and beyond." />
+  <meta name="keywords" content="AI audio city guide, AI travel guide app, audio tour app Japan, audio tour app Korea, audio tour app Vietnam, audio tour app China, AI narration travel, self-guided audio tour, walking tour app, hands-free audio tour, AirPods travel app, offline travel guide, multilingual travel guide, Tokyo audio tour, Kyoto audio guide, Osaka travel app, Seoul audio guide, Busan travel app, Bangkok audio guide, Hanoi travel app, Singapore audio guide, Taipei audio guide, city guide app, travel audio guide, AI audio tour, best audio guide Japan" />
+  <meta property="og:title" content="CityYoYo — AI Audio City Guide & Hands-Free Walking Tours" />
+  <meta property="og:description" content="Tap any place on the map for its AI-narrated story, or put on your headphones and just walk — Tour Mode narrates automatically. Free on iOS and Android." />
+  <meta property="og:image" content="https://cityyoyo.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://cityyoyo.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="CityYoYo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CityYoYo — AI Audio City Guide & Hands-Free Walking Tours" />
+  <meta name="twitter:description" content="Tap any place on the map for its AI-narrated story, or put on your headphones and just walk — Tour Mode narrates automatically. Free on iOS and Android." />
+  <meta name="twitter:image" content="https://cityyoyo.com/assets/og-image.png" />
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="canonical" href="https://cityyoyo.com/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "CityYoYo",
+    "description": "CityYoYo is an AI audio city guide with two ways to explore. Explore Mode: tap any place on the map — a landmark, café, or alley — and instantly hear an AI-generated narration in your language. Tour Mode: put on headphones and walk, and CityYoYo automatically narrates nearby places hands-free, with AirPods gestures, personalized interests, and live captions. Works offline, supports 6 languages, covers any city worldwide.",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "TravelApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "url": "https://cityyoyo.com",
+    "downloadUrl": "https://apps.apple.com/us/app/cityyoyo-audio-city-guide/id6756594840",
+    "inLanguage": ["en", "zh", "ko", "es", "pt", "fr"],
+    "featureList": "AI-generated audio narration, Hands-free Tour Mode, AirPods & headphone gestures, Personalized interests, Live captions, Background playback with lock-screen controls, Offline city packs, 6 languages, Reading mode, Interactive map, Multiple voice options"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CityYoYo",
+    "url": "https://cityyoyo.com",
+    "logo": "https://cityyoyo.com/assets/og-image.png"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does CityYoYo generate its narrations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CityYoYo uses AI to generate narration on the spot for whichever place you tap or walk past — nothing is pre-recorded or scripted in advance. Explore Mode narrates any point you tap on the map; Tour Mode automatically narrates nearby places hands-free as you walk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does CityYoYo work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can download city packs before you travel and use CityYoYo without an internet connection — useful for international travel or areas with spotty connectivity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Tour Mode?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tour Mode is a hands-free walking mode: put on your headphones, start walking, and CityYoYo automatically finds and narrates nearby places without you tapping the screen. It supports AirPods and headphone gestures (tap once for the next place, twice to pause, three times to skip), personalized interests, live captions, and background playback with lock-screen controls."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What languages does CityYoYo support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CityYoYo's interface and narrations are available in English, Chinese, Korean, Spanish, Portuguese, and French."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is CityYoYo free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, CityYoYo is free to download and use on iOS and Android, with optional higher-quality on-device AI voices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which cities does CityYoYo cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CityYoYo works in any city worldwide, not just major landmarks — including popular destinations across Japan, Korea, Vietnam, China, and beyond, plus cities in Europe and the Americas."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fffdf0;
+      --ink: #1a1a1a;
+      --muted: #555544;
+      --subtle: #999980;
+      --accent: #F3CA3D;
+      --accent-dark: #d4a800;
+      --green: #77AE49;
+      --red: #DD4136;
+      --border: #ede8c8;
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 253, 240, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .btn-nav {
+      background: var(--ink);
+      color: var(--accent) !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .btn-nav:hover { background: #333; }
+
+    /* HERO */
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 64px 24px 56px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+    }
+    .hero h1 span {
+      background: var(--accent);
+      padding: 0 6px;
+      border-radius: 6px;
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+    .store-badges {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .store-badges a {
+      display: block;
+    }
+    .store-badges img {
+      height: 44px;
+      width: auto;
+    }
+    .store-badges a:nth-child(2) img {
+      height: 63px;
+      margin: -10px 0;
+    }
+    .store-badges a:hover { opacity: 0.85; transition: opacity 0.15s; }
+    .hero-note {
+      font-size: 13px;
+      color: var(--subtle);
+    }
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+    }
+    .phone-frame {
+      max-width: 320px;
+      width: 100%;
+    }
+    .phone-frame img {
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      box-shadow: 0 32px 80px rgba(15,23,42,0.18);
+      display: block;
+    }
+
+    /* HOW IT WORKS */
+    .how-it-works {
+      background: white;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 24px;
+    }
+    .how-it-works .container,
+    .features .container,
+    .download .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      margin-bottom: 32px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 0;
+      align-items: start;
+    }
+    .step { text-align: center; padding: 0 12px; }
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--ink);
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .step h3 { font-size: 18px; margin-bottom: 10px; }
+    .step p { font-size: 15px; color: var(--muted); }
+    .step-arrow {
+      font-size: 24px;
+      color: var(--border);
+      padding-top: 12px;
+      align-self: start;
+    }
+
+    /* MODE CARDS */
+    .mode-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .mode-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+    .mode-card-icon {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+    .mode-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+    .mode-card > p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .mode-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mode-card li {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+      display: flex;
+      gap: 10px;
+    }
+    .mode-card li::before {
+      content: "";
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-dark);
+      margin-top: 7px;
+    }
+    .mode-card .mode-step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .mode-card.tour { background: #fdf6df; border-color: var(--accent); border-width: 2px; }
+    .mode-card.tour li::before { background: var(--accent-dark); }
+
+    /* FEATURES */
+    .features { padding: 56px 24px; }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    .feature-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* SCREENSHOT GALLERY */
+    .screenshots {
+      background: var(--ink);
+      padding: 56px 0 56px 24px;
+      overflow: hidden;
+    }
+    .screenshots .section-label {
+      color: var(--accent);
+    }
+    .screenshots h2 {
+      color: white;
+      margin-bottom: 40px;
+      padding-right: 24px;
+    }
+    .screenshot-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+      padding-right: 24px;
+      cursor: grab;
+    }
+    .screenshot-track:active { cursor: grabbing; }
+    .screenshot-track::-webkit-scrollbar { display: none; }
+    .screenshot-track img {
+      flex-shrink: 0;
+      height: 520px;
+      width: auto;
+      border-radius: 20px;
+      scroll-snap-align: start;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+      display: block;
+    }
+    .screenshot-hint {
+      font-size: 13px;
+      color: #666650;
+      margin-top: 20px;
+      padding-right: 24px;
+    }
+
+    /* FAQ */
+    .faq { padding: 56px 24px; background: white; border-top: 1px solid var(--border); }
+    .faq .container { max-width: 1100px; margin: auto; }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+    }
+    .faq-item summary {
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      float: right;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+    .faq-item[open] summary::after { content: "\2212"; }
+    .faq-item p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    /* DOWNLOAD */
+    .download {
+      background: var(--accent);
+      padding: 56px 24px;
+      text-align: center;
+    }
+    .download h2 { color: var(--ink); margin-bottom: 12px; }
+    .download-sub {
+      font-size: 18px;
+      color: var(--ink);
+      opacity: 0.65;
+      margin-bottom: 40px;
+    }
+    .download .store-badges { justify-content: center; }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 24px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .footer-tagline {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      font-size: 13px;
+      color: var(--subtle);
+      margin-bottom: 8px;
+    }
+    .footer-links a {
+      color: var(--subtle);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-copy {
+      font-size: 13px;
+      color: var(--subtle);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 56px 24px 48px;
+        gap: 48px;
+        text-align: center;
+      }
+      .hero-sub { max-width: 100%; }
+      .store-badges { justify-content: center; }
+      .hero-visual { order: -1; }
+      .phone-frame { width: 260px; }
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .step-arrow { display: none; }
+      .mode-grid { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links a:not(.btn-nav) { display: none; }
+      .screenshot-track img { height: 380px; }
+    }
+
+    @media (max-width: 480px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      .screenshot-track img { height: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">CityYoYo</a>
+      <div class="nav-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a href="/blog/">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-eyebrow">AI Audio City Guide</span>
+      <h1>Every Place<br>Has a <span>Story.</span></h1>
+      <p class="hero-sub">CityYoYo gives you two ways to explore a city on foot — tap any place on the map for its story, or put on your headphones and just walk while Tour Mode narrates hands-free.</p>
+      <div class="store-badges">
+        <a href="https://apps.apple.com/us/app/cityyoyo-audio-city-guide/id6756594840" target="_blank" rel="noopener">
+          <img src="assets/badge-app-store.svg" alt="Download on the App Store" height="44" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.cityyoyo.audio" target="_blank" rel="noopener">
+          <img src="assets/badge-google-play.png" alt="Get it on Google Play" height="44" />
+        </a>
+      </div>
+      <p class="hero-note">Free &nbsp;·&nbsp; iOS &amp; Android &nbsp;·&nbsp; English, 中文, 한국어, Español, Português, Français</p>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-frame">
+        <img src="assets/hero-screenshot.png" alt="CityYoYo home screen — choose Explore on Map or Tour with Earphones" />
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <p class="section-label">Two ways to explore</p>
+      <h2>Tap a place, or just walk</h2>
+      <div class="mode-grid">
+        <div class="mode-card">
+          <div class="mode-card-icon">&#x1F4CD;</div>
+          <h3>Explore Mode</h3>
+          <p>Tap any spot on the map — a landmark, a café, a hidden alley — and instantly hear AI-generated narration crafted just for that place.</p>
+          <ul>
+            <li><span class="mode-step-number">1</span>&nbsp; Open the map and browse nearby places or search any city</li>
+            <li><span class="mode-step-number">2</span>&nbsp; Tap any landmark, neighborhood, café, or point of interest</li>
+            <li><span class="mode-step-number">3</span>&nbsp; Hear an accurate, engaging narration instantly</li>
+          </ul>
+        </div>
+        <div class="mode-card tour">
+          <div class="mode-card-icon">&#x1F3A7;</div>
+          <h3>Tour Mode</h3>
+          <p>Put your headphones on, pocket your phone, and walk. Tour Mode automatically finds and narrates interesting places as you pass them — no tapping, no screen time.</p>
+          <ul>
+            <li>AirPods &amp; headphone gestures — tap once for the next place, twice to pause, three times to skip</li>
+            <li>Personalized by your interests — cafés, history, art, architecture, and more</li>
+            <li>Background playback with lock-screen controls</li>
+            <li>Live captions follow along with every narration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <p class="section-label">Features</p>
+      <h2>Everything you need to explore</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#x2728;</div>
+          <h3>AI Narrations for Every Place</h3>
+          <p>Every description is AI-generated on the spot — accurate, engaging, and unique to where you are. Nothing pre-recorded, nothing canned. Tokyo backstreets sound nothing like Kyoto temples.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F4E5;</div>
+          <h3>Offline City Packs</h3>
+          <p>Download cities before you travel. Explore without internet — perfect for travel abroad or areas with spotty connections.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F399;&#xFE0F;</div>
+          <h3>Multiple Voice Options</h3>
+          <p>Choose from lightweight system voices or high-quality on-device AI voices. Your ears, your choice.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F310;</div>
+          <h3>6 Languages</h3>
+          <p>Narrations and interface available in English, &#20013;&#25991;, &#54620;&#44397;&#50612;, Español, Português, and Français. Switch anytime in settings.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F4D6;</div>
+          <h3>Reading &amp; Quiet Mode</h3>
+          <p>Prefer text? Flip to Reading Mode and browse narrations without audio. Enable Quiet Mode to pause auto-play while still exploring the map.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x2605;</div>
+          <h3>Simple by Design</h3>
+          <p>No cluttered menus. No forced sign-ups. Open, tap, explore. CityYoYo stays out of your way so you can stay in the moment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINATIONS -->
+  <section style="padding: 48px 24px; background: white; border-top: 1px solid var(--border);">
+    <div style="max-width: 1100px; margin: auto;">
+      <p class="section-label">Popular destinations</p>
+      <h2 style="margin-bottom: 16px;">Explore anywhere. Hear every story.</h2>
+      <p style="font-size: 16px; color: var(--muted); max-width: 640px; margin-bottom: 40px;">
+        CityYoYo's AI audio guide works anywhere in the world — tap any place on the map, or put on your headphones and let Tour Mode narrate as you walk. Perfect for independent travelers exploring Asia and beyond.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+          <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1EF;&#x1F1F5;</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">Japan</h3>
+          <p style="font-size: 13px; color: var(--muted);">Tokyo, Kyoto, Osaka, Nara — hear the AI-narrated stories behind every alley, shrine, and neighborhood.</p>
+        </div>
+        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+          <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1F0;&#x1F1F7;</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">Korea</h3>
+          <p style="font-size: 13px; color: var(--muted);">Seoul, Busan, Gyeongju — ancient palaces, modern districts, all with rich narration in your language.</p>
+        </div>
+        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+          <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1FB;&#x1F1F3;</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">Vietnam</h3>
+          <p style="font-size: 13px; color: var(--muted);">Hanoi, Ho Chi Minh City, H&#7897;i An — discover the layered history of every street and landmark.</p>
+        </div>
+        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+          <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1E8;&#x1F1F3;</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">China</h3>
+          <p style="font-size: 13px; color: var(--muted);">Beijing, Shanghai, Xi'an — the stories behind temples, hutongs, and city blocks that shaped history.</p>
+        </div>
+        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+          <div style="font-size: 24px; margin-bottom: 8px;">&#x1F30D;</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">Worldwide</h3>
+          <p style="font-size: 13px; color: var(--muted);">Paris, Rome, New York, Bangkok, Singapore — CityYoYo's AI works for any place on earth, in 6 languages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOT GALLERY -->
+  <section class="screenshots" id="screenshots">
+    <p class="section-label" style="padding-right: 24px;">See it in action</p>
+    <h2>Hear the story of any place</h2>
+    <div class="screenshot-track" id="screenshotTrack">
+      <img src="assets/screenshots/00_hub_screen.png" alt="CityYoYo home screen — choose Explore on Map or Tour with Earphones" loading="lazy" />
+      <img src="assets/screenshots/01_explore_mode.png" alt="Explore Mode — tap any place on the map to hear its story" loading="lazy" />
+      <img src="assets/screenshots/02_tour_mode.png" alt="Tour Mode — hands-free walking tour with live captions" loading="lazy" />
+      <img src="assets/screenshots/03_asia_cities.png" alt="Explore cities across Asia and worldwide" loading="lazy" />
+      <img src="assets/screenshots/04_offline_packs.png" alt="Offline city packs — explore without internet" loading="lazy" />
+      <img src="assets/screenshots/05_languages.png" alt="Voice and language options — 6 languages supported" loading="lazy" />
+    </div>
+    <p class="screenshot-hint">Swipe to explore &#8594;</p>
+  </section>
+
+  <!-- BLOG TEASER -->
+  <section style="padding: 48px 24px; background: white; border-top: 1px solid var(--border);">
+    <div style="max-width: 1100px; margin: auto;">
+      <p class="section-label">From the blog</p>
+      <h2 style="margin-bottom: 32px;">Stories and guides</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+        <a href="/blog/best-city-audio-tour-apps.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">April 5, 2026</p>
+          <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">Best City Audio Tour Apps in 2026: Compared Side by Side</p>
+          <p style="font-size: 14px; color: var(--muted);">CityYoYo, Rick Steves Audio Europe, VoiceMap, Izi.Travel, and GPSmyCity — compared honestly.</p>
+        </a>
+        <a href="/blog/tokyo-ramen-alley-origin-story.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">April 4, 2026</p>
+          <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">I Was Waiting for Ramen in a Tokyo Alley. That's How This App Was Born.</p>
+          <p style="font-size: 14px; color: var(--muted);">The origin story of CityYoYo.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <p class="section-label">FAQ</p>
+      <h2>Common questions</h2>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>How does CityYoYo generate its narrations?</summary>
+          <p>CityYoYo uses AI to generate narration on the spot for whichever place you tap or walk past — nothing is pre-recorded or scripted in advance. Explore Mode narrates any point you tap on the map; Tour Mode automatically narrates nearby places hands-free as you walk.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does CityYoYo work offline?</summary>
+          <p>Yes. You can download city packs before you travel and use CityYoYo without an internet connection — useful for international travel or areas with spotty connectivity.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is Tour Mode?</summary>
+          <p>Tour Mode is a hands-free walking mode: put on your headphones, start walking, and CityYoYo automatically finds and narrates nearby places without you tapping the screen. It supports AirPods and headphone gestures (tap once for the next place, twice to pause, three times to skip), personalized interests, live captions, and background playback with lock-screen controls.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What languages does CityYoYo support?</summary>
+          <p>CityYoYo's interface and narrations are available in English, Chinese, Korean, Spanish, Portuguese, and French.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is CityYoYo free?</summary>
+          <p>Yes, CityYoYo is free to download and use on iOS and Android, with optional higher-quality on-device AI voices.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Which cities does CityYoYo cover?</summary>
+          <p>CityYoYo works in any city worldwide, not just major landmarks — including popular destinations across Japan, Korea, Vietnam, China, and beyond, plus cities in Europe and the Americas.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-logo">CityYoYo</p>
+    <p class="footer-tagline">Every place has a story.</p>
+    <p class="footer-links">
+      <a href="/blog/">Blog</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </p>
+    <p class="footer-copy">&copy; 2026 CityYoYo. All rights reserved.</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:1000; align-items:center; justify-content:center;">
+    <button id="lb-prev" style="position:absolute; left:16px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.12); border:none; color:white; font-size:28px; width:48px; height:48px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1;">&#8592;</button>
+    <img id="lightbox-img" src="" alt="" style="max-height:92vh; max-width:80vw; border-radius:16px; box-shadow:0 24px 80px rgba(0,0,0,0.6); cursor:zoom-out;" />
+    <button id="lb-next" style="position:absolute; right:16px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.12); border:none; color:white; font-size:28px; width:48px; height:48px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1;">&#8594;</button>
+    <button id="lb-close" style="position:absolute; top:16px; right:16px; background:rgba(255,255,255,0.12); border:none; color:white; font-size:20px; width:40px; height:40px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center;">&#x2715;</button>
+  </div>
+
+  <script>
+    // Drag-to-scroll on screenshot track
+    const track = document.getElementById('screenshotTrack');
+    let isDown = false, startX, scrollLeft, didDrag = false;
+    track.addEventListener('mousedown', e => {
+      isDown = true;
+      didDrag = false;
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+    track.addEventListener('mouseleave', () => { isDown = false; });
+    track.addEventListener('mouseup', () => { isDown = false; });
+    track.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      didDrag = true;
+      const x = e.pageX - track.offsetLeft;
+      track.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const imgs = Array.from(track.querySelectorAll('img'));
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = imgs[index].src;
+      lightboxImg.alt = imgs[index].alt;
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function navigate(dir) {
+      currentIndex = (currentIndex + dir + imgs.length) % imgs.length;
+      lightboxImg.src = imgs[currentIndex].src;
+      lightboxImg.alt = imgs[currentIndex].alt;
+    }
+
+    imgs.forEach((img, i) => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => { if (!didDrag) openLightbox(i); });
+    });
+
+    document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); navigate(-1); });
+    document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); navigate(1); });
+    document.getElementById('lb-close').addEventListener('click', closeLightbox);
+    lightboxImg.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', e => {
+      if (lightbox.style.display === 'none') return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+  </script>
+
+</body>
+</html>
