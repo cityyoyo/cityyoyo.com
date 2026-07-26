@@ -1,0 +1,20 @@
+# CityYoYo
+
+> CityYoYo is a free AI audio city guide app for iOS and Android. It offers two ways to explore a city on foot: Explore Mode, where tapping any place on a map instantly generates an AI narration for that spot, and Tour Mode, a hands-free walking mode that automatically narrates nearby places as you walk, controllable with AirPods/headphone gestures. Narrations are generated on the spot rather than pre-recorded, so it works for any place worldwide, not just famous landmarks. Offline city packs are available, and the app supports six languages: English, Simplified Chinese, Korean, Spanish, Portuguese, and French.
+
+## Product
+
+- [Homepage](https://cityyoyo.com/): Overview, how it works (Explore Mode vs Tour Mode), features, screenshots, FAQ, and download links.
+- [App Store listing](https://apps.apple.com/us/app/cityyoyo-audio-city-guide/id6756594840): iOS download.
+- [Google Play listing](https://play.google.com/store/apps/details?id=com.cityyoyo.audio): Android download.
+
+## Blog
+
+- [Blog index](https://cityyoyo.com/blog/): All posts.
+- [Best City Audio Tour Apps in 2026: Compared Side by Side](https://cityyoyo.com/blog/best-city-audio-tour-apps.html): Honest comparison of CityYoYo against Rick Steves Audio Europe, VoiceMap, Izi.Travel, and GPSmyCity, covering offline support, languages, pricing, and content depth.
+- [I Was Waiting for Ramen in a Tokyo Alley. That's How This App Was Born.](https://cityyoyo.com/blog/tokyo-ramen-alley-origin-story.html): The origin story of CityYoYo.
+
+## Policies
+
+- [Privacy Policy](https://cityyoyo.com/privacy.html)
+- [Terms of Service](https://cityyoyo.com/terms.html)
