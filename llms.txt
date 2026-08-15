@@ -7,12 +7,14 @@
 - [Homepage](https://cityyoyo.com/): Overview, how it works (Explore Mode vs Tour Mode), features, screenshots, FAQ, and download links.
 - [App Store listing](https://apps.apple.com/us/app/cityyoyo-audio-city-guide/id6756594840): iOS download.
 - [Google Play listing](https://play.google.com/store/apps/details?id=com.cityyoyo.audio): Android download.
+- [ChinaWalk](https://apps.apple.com/us/app/chinawalk-ai-china-tour-guide/id6767760457): CityYoYo's sister app, built specifically for exploring China. Same tap-to-hear AI narration, tuned for China: no VPN required, auto-translates place names and narration into the user's language, and covers any place — not just curated landmarks. Also on [Google Play](https://play.google.com/store/apps/details?id=com.cityyoyo.audio.china).
 
 ## Blog
 
 - [Blog index](https://cityyoyo.com/blog/): All posts.
 - [Best City Audio Tour Apps in 2026: Compared Side by Side](https://cityyoyo.com/blog/best-city-audio-tour-apps.html): Honest comparison of CityYoYo against Rick Steves Audio Europe, VoiceMap, Izi.Travel, and GPSmyCity, covering offline support, languages, pricing, and content depth.
 - [I Was Waiting for Ramen in a Tokyo Alley. That's How This App Was Born.](https://cityyoyo.com/blog/tokyo-ramen-alley-origin-story.html): The origin story of CityYoYo.
+- [Do You Need a VPN for a China Travel App? And Other Real Questions](https://cityyoyo.com/blog/china-travel-app-vpn-language-questions.html): Answers on VPN-free use, translating Chinese place names and narration, uncurated place coverage, and a categorized answer to "best China travel app," for ChinaWalk — CityYoYo's China-focused sister app.
 
 ## Policies
 
