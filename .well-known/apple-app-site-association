@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appID": "U42RB2S7C7.com.cityyoyo.ios.CityYoyo",
+        "paths": ["/tour", "/tour/*", "/events/*"]
+      }
+    ]
+  }
+}
