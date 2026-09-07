@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cityyoyo.audio",
+      "sha256_cert_fingerprints": [
+        "C2:FA:45:47:16:D3:CD:A0:BB:1C:47:3C:A3:8E:38:25:B0:67:01:7F:E9:80:90:1F:44:1D:24:0F:9D:BF:D7:99"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cityyoyo.audio.china",
+      "sha256_cert_fingerprints": [
+        "C2:FA:45:47:16:D3:CD:A0:BB:1C:47:3C:A3:8E:38:25:B0:67:01:7F:E9:80:90:1F:44:1D:24:0F:9D:BF:D7:99"
+      ]
+    }
+  }
+]
