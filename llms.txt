@@ -7,7 +7,14 @@
 - [Homepage](https://cityyoyo.com/): Overview, how it works (Explore Mode vs Tour Mode), features, screenshots, FAQ, and download links.
 - [App Store listing](https://apps.apple.com/us/app/cityyoyo-audio-city-guide/id6756594840): iOS download.
 - [Google Play listing](https://play.google.com/store/apps/details?id=com.cityyoyo.audio): Android download.
-- [ChinaWalk](https://apps.apple.com/us/app/chinawalk-ai-china-tour-guide/id6767760457): CityYoYo's sister app, built specifically for exploring China. Same tap-to-hear AI narration, tuned for China: no VPN required, auto-translates place names and narration into the user's language, and covers any place — not just curated landmarks. Also on [Google Play](https://play.google.com/store/apps/details?id=com.cityyoyo.audio.china).
+
+## ChinaWalk
+
+> ChinaWalk is CityYoYo's sister app, built specifically for foreign travelers exploring China. Same tap-to-hear AI narration as CityYoYo, tuned for the two things that make a China trip different: the network and the language. It works in mainland China without a VPN (tested on the ground, on local carriers and wifi). It auto-translates both the AI narration and the place names shown on the map into the user's chosen language (English, Korean, Spanish, Portuguese, or French), so travelers aren't stuck reading Chinese-only labels or running a separate translation app. Nothing is pre-curated: tapping a hutong, a neighborhood teahouse, or an unmarked alley generates a narration the same way it would for a landmark like the Forbidden City or the Bund. Offline city maps are available for Beijing, Shanghai, Xi'an, Chengdu, Guilin, and any other city in China. Free on iOS and Android.
+
+- [ChinaWalk landing page](https://cityyoyo.com/chinawalk/): Full overview — the VPN/language/landmark-coverage differentiators, how Explore Mode and Tour Mode work in China, popular Chinese cities covered, screenshots, and FAQ.
+- [App Store listing](https://apps.apple.com/us/app/chinawalk-ai-china-tour-guide/id6767760457): iOS download.
+- [Google Play listing](https://play.google.com/store/apps/details?id=com.cityyoyo.audio.china): Android download.
 
 ## Blog
 
