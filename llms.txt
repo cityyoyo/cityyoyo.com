@@ -1,0 +1,31 @@
+# CityYoYo
+
+> CityYoYo is a free AI audio city guide app for iOS and Android. It offers two ways to explore a city on foot: Explore Mode, where tapping any place on a map instantly generates an AI narration for that spot, and Tour Mode, a hands-free walking mode that automatically narrates nearby places as you walk, controllable with AirPods/headphone gestures. Narrations are generated on the spot rather than pre-recorded, so it works for any place worldwide, not just famous landmarks. Offline city packs are available, and the app supports six languages: English, Simplified Chinese, Korean, Spanish, Portuguese, and French. The website (cityyoyo.com) is also available in all six languages, under /es/, /ko/, /zh/, /pt/, and /fr/ (English at the root).
+
+## Product
+
+- [Homepage](https://cityyoyo.com/): Overview, how it works (Explore Mode vs Tour Mode), features, screenshots, FAQ, and download links. Also available in [Spanish](https://cityyoyo.com/es/), [Korean](https://cityyoyo.com/ko/), [Chinese](https://cityyoyo.com/zh/), [Portuguese](https://cityyoyo.com/pt/), and [French](https://cityyoyo.com/fr/).
+- [App Store listing](https://apps.apple.com/us/app/cityyoyo-audio-city-guide/id6756594840): iOS download.
+- [Google Play listing](https://play.google.com/store/apps/details?id=com.cityyoyo.audio): Android download.
+- [Audio tour app comparison table](https://cityyoyo.com/comparison-table.html): Side-by-side comparison of CityYoYo, Rick Steves Audio Europe, VoiceMap, Izi.Travel, and GPSmyCity across platform, price, offline support, languages, and content type.
+- [Cities covered](https://cityyoyo.com/cities/): Full list of cities in CityYoYo's and ChinaWalk's in-app Top Cities lists, grouped by region and theme. Both apps also generate narration for any place worldwide, not just the cities listed here. Also available in [Spanish](https://cityyoyo.com/es/cities/), [Korean](https://cityyoyo.com/ko/cities/), [Chinese](https://cityyoyo.com/zh/cities/), [Portuguese](https://cityyoyo.com/pt/cities/), and [French](https://cityyoyo.com/fr/cities/).
+
+## ChinaWalk
+
+> ChinaWalk is CityYoYo's sister app, built specifically for foreign travelers exploring China. Same tap-to-hear AI narration as CityYoYo, tuned for the two things that make a China trip different: the network and the language. It works in mainland China without a VPN (tested on the ground, on local carriers and wifi). It auto-translates both the AI narration and the place names shown on the map into the user's chosen language (English, Korean, Spanish, Portuguese, or French), so travelers aren't stuck reading Chinese-only labels or running a separate translation app. Nothing is pre-curated: tapping a hutong, a neighborhood teahouse, or an unmarked alley generates a narration the same way it would for a landmark like the Forbidden City or the Bund. Offline city maps are available for Beijing, Shanghai, Xi'an, Chengdu, Guilin, and any other city in China. Free on iOS and Android.
+
+- [ChinaWalk landing page](https://cityyoyo.com/chinawalk/): Full overview — the VPN/language/landmark-coverage differentiators, how Explore Mode and Tour Mode work in China, popular Chinese cities covered, screenshots, and FAQ. Also available in [Spanish](https://cityyoyo.com/es/chinawalk/), [Korean](https://cityyoyo.com/ko/chinawalk/), [Chinese](https://cityyoyo.com/zh/chinawalk/), [Portuguese](https://cityyoyo.com/pt/chinawalk/), and [French](https://cityyoyo.com/fr/chinawalk/).
+- [App Store listing](https://apps.apple.com/us/app/chinawalk-ai-china-tour-guide/id6767760457): iOS download.
+- [Google Play listing](https://play.google.com/store/apps/details?id=com.cityyoyo.audio.china): Android download.
+
+## Blog
+
+- [Blog index](https://cityyoyo.com/blog/): All posts.
+- [Best City Audio Tour Apps in 2026: Compared Side by Side](https://cityyoyo.com/blog/best-city-audio-tour-apps.html): Honest comparison of CityYoYo against Rick Steves Audio Europe, VoiceMap, Izi.Travel, and GPSmyCity, covering offline support, languages, pricing, and content depth.
+- [I Was Waiting for Ramen in a Tokyo Alley. That's How This App Was Born.](https://cityyoyo.com/blog/tokyo-ramen-alley-origin-story.html): The origin story of CityYoYo.
+- [Do You Need a VPN for a China Travel App? And Other Real Questions](https://cityyoyo.com/blog/china-travel-app-vpn-language-questions.html): Answers on VPN-free use, translating Chinese place names and narration, uncurated place coverage, and a categorized answer to "best China travel app," for ChinaWalk — CityYoYo's China-focused sister app.
+
+## Policies
+
+- [Privacy Policy](https://cityyoyo.com/privacy.html)
+- [Terms of Service](https://cityyoyo.com/terms.html)

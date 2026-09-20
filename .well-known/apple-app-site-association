@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appID": "U42RB2S7C7.com.cityyoyo.ios.CityYoyo",
+        "paths": ["/tour", "/tour/*", "/events/*", "/top-cities", "/top-cities/*"]
+      },
+      {
+        "appID": "U42RB2S7C7.com.cityyoyo.ios.ChinaTour",
+        "paths": ["/china/top-cities", "/china/top-cities/*", "/china/tour", "/china/tour/*", "/china/events/*"]
+      }
+    ]
+  }
+}
