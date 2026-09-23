@@ -242,7 +242,7 @@
   </url>
   <url>
     <loc>https://cityyoyo.com/blog/</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -263,6 +263,12 @@
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cityyoyo.com/blog/japan-trip-leave-gaps.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://cityyoyo.com/privacy.html</loc>
