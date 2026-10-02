@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPN3VZKJGB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VPN3VZKJGB');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="doc-title">No City Limits — Real Travel Stats from CityYoYo</title>
+  <meta id="doc-desc" name="description" content="How fast does CityYoYo start talking after you tap a place? Real numbers from real travelers — 23 countries, 69 cities, 2.3 seconds median." />
+  <link rel="canonical" href="https://cityyoyo.com/blog/no-city-limits-stats.html" />
+  <meta property="og:title" content="No City Limits — Real Travel Stats from CityYoYo" />
+  <meta property="og:description" content="How fast does CityYoYo start talking after you tap a place? Real numbers from real travelers — 23 countries, 69 cities, 2.3 seconds median." />
+  <meta property="og:image" content="https://cityyoyo.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://cityyoyo.com/blog/no-city-limits-stats.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="CityYoYo" />
+  <meta property="article:published_time" content="2026-10-01" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="No City Limits — Real Travel Stats from CityYoYo" />
+  <meta name="twitter:description" content="How fast does CityYoYo start talking after you tap a place? Real numbers from real travelers — 23 countries, 69 cities, 2.3 seconds median." />
+  <meta name="twitter:image" content="https://cityyoyo.com/assets/og-image.png" />
+  <link rel="icon" href="../assets/favicon.ico" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "No City Limits — Real Travel Stats from CityYoYo",
+    "description": "How fast does CityYoYo start talking after you tap a place? Real numbers from real travelers — 23 countries, 69 cities, 2.3 seconds median.",
+    "image": "https://cityyoyo.com/assets/og-image.png",
+    "datePublished": "2026-10-01",
+    "dateModified": "2026-10-01",
+    "author": { "@type": "Organization", "name": "CityYoYo" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CityYoYo",
+      "logo": { "@type": "ImageObject", "url": "https://cityyoyo.com/assets/og-image.png" }
+    },
+    "mainEntityOfPage": "https://cityyoyo.com/blog/no-city-limits-stats.html",
+    "inLanguage": ["en", "es", "fr", "ko", "pt", "zh"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+    :root{
+      --bg:#0A1120;
+      --panel:#101B33;
+      --panel-2:#0D1729;
+      --ink:#F4F1E6;
+      --muted:#8A96B2;
+      --muted-2:#5E6B88;
+      --line:#223058;
+      --line-soft:#1A2544;
+      --amber:#F5A623;
+      --amber-deep:#C9790C;
+      --amber-glow:rgba(245,166,35,0.28);
+      --good:#7FBD55;
+      --mid:#F5A623;
+      --hi:#E2574C;
+    }
+
+    html{-webkit-text-size-adjust:100%;}
+
+    body{
+      background:var(--bg);
+      color:var(--ink);
+      font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      line-height:1.55;
+      padding:0 20px;
+      background-image:
+        radial-gradient(ellipse 900px 500px at 15% -5%, rgba(245,166,35,0.10), transparent 60%),
+        radial-gradient(ellipse 700px 500px at 100% 10%, rgba(127,189,85,0.07), transparent 55%);
+      background-repeat:no-repeat;
+    }
+
+    .mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;}
+    .tnum{font-variant-numeric:tabular-nums;}
+
+    .wrap{max-width:860px;margin:0 auto;padding-block:28px 40px;}
+
+    nav.top{margin-bottom:20px;}
+    nav.top a{
+      font-family:"IBM Plex Mono",monospace;
+      color:var(--muted);text-decoration:none;font-size:13.5px;
+    }
+    nav.top a:hover{color:var(--ink);}
+
+    .langbar{
+      display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px;
+    }
+    .langbar button{
+      font-family:"IBM Plex Mono",monospace;
+      font-size:12px;letter-spacing:0.02em;
+      color:var(--muted);background:var(--panel-2);
+      border:1px solid var(--line);border-radius:999px;
+      padding:6px 12px;cursor:pointer;
+    }
+    .langbar button:hover{color:var(--ink);border-color:var(--muted-2);}
+    .langbar button[aria-pressed="true"]{color:#0A1120;background:var(--amber);border-color:var(--amber);font-weight:600;}
+    .langbar button:focus-visible{outline:2px solid var(--amber);outline-offset:2px;}
+
+    .byline{
+      font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted-2);
+      margin-bottom:22px;
+    }
+
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      font-family:"IBM Plex Mono",monospace;
+      font-size:12.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
+      color:var(--amber);
+      margin-bottom:22px;
+    }
+    .eyebrow::before{
+      content:"";width:7px;height:7px;border-radius:50%;
+      background:var(--good);
+      box-shadow:0 0 0 3px rgba(127,189,85,0.18);
+      flex-shrink:0;
+    }
+
+    h1{
+      font-family:"Unbounded",sans-serif;
+      font-weight:700;
+      font-size:clamp(28px,4.4vw,46px);
+      line-height:1.14;
+      letter-spacing:-0.5px;
+      text-wrap:balance;
+      max-width:620px;
+      margin-bottom:18px;
+    }
+    h1 em{font-style:normal;color:var(--amber);}
+
+    .lede{font-size:16.5px;color:var(--muted);max-width:540px;margin-bottom:38px;}
+    .lede b{color:var(--ink);font-weight:600;}
+
+    .hero-stat{
+      display:flex;align-items:baseline;gap:22px;flex-wrap:wrap;
+      border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+      padding-block:26px;margin-bottom:44px;
+    }
+    .hero-stat .num{
+      font-family:"Unbounded",sans-serif;font-weight:800;
+      font-size:clamp(56px,10vw,96px);line-height:0.9;color:var(--ink);
+      text-shadow:0 0 46px var(--amber-glow);
+    }
+    .hero-stat .num span{color:var(--amber);}
+    .hero-stat .num-label{
+      font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:0.08em;
+      text-transform:uppercase;color:var(--muted);max-width:240px;line-height:1.5;
+    }
+    .hero-stat .num-label b{
+      display:block;color:var(--ink);font-size:14px;letter-spacing:0.02em;
+      text-transform:none;margin-bottom:4px;
+    }
+
+    .sec-head{
+      display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .sec-title{
+      font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;
+      letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);
+    }
+    .sec-title b{color:var(--ink);}
+    .sec-note{font-size:13px;color:var(--muted-2);}
+
+    section{margin-bottom:48px;}
+
+    .kpi-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel-2);
+    }
+    .kpi{padding:22px 18px;border-right:1px solid var(--line);}
+    .kpi:last-child{border-right:none;}
+    .kpi .v{font-family:"Unbounded",sans-serif;font-weight:700;font-size:clamp(26px,4vw,34px);color:var(--ink);margin-bottom:6px;}
+    .kpi .l{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase;color:var(--muted);}
+
+    .network-panel{
+      border:1px solid var(--line);border-radius:16px;
+      background:radial-gradient(circle at 50% 46%, rgba(245,166,35,0.06), transparent 62%), var(--panel);
+      padding:22px 10px 8px;
+    }
+    .network-svg-wrap{display:none;}
+    .network-svg-wrap svg{display:block;width:100%;height:auto;overflow:visible;}
+    .node-label{font-family:"IBM Plex Mono",monospace;font-size:11.5px;fill:var(--ink);}
+    .node-country{font-family:"IBM Plex Mono",monospace;font-size:9.5px;fill:var(--muted);}
+    .node-lat{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;}
+    .hub-label{font-family:"Unbounded",sans-serif;font-size:13px;font-weight:700;fill:var(--ink);}
+
+    .network-list{padding:4px 12px 4px;}
+    .network-row{
+      display:flex;align-items:center;gap:12px;
+      padding:12px 4px;border-bottom:1px solid var(--line-soft);
+    }
+    .network-row:last-child{border-bottom:none;}
+    .network-row .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+    .network-row .place{flex:1;min-width:0;}
+    .network-row .city{font-family:"IBM Plex Mono",monospace;font-size:13.5px;color:var(--ink);}
+    .network-row .country{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:0.05em;color:var(--muted);}
+    .network-row .lat{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:15px;flex-shrink:0;}
+
+    .legend{
+      display:flex;gap:18px;flex-wrap:wrap;
+      padding:14px 18px 18px;
+      font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);
+    }
+    .legend span{display:inline-flex;align-items:center;gap:6px;}
+    .legend i{width:8px;height:8px;border-radius:50%;display:inline-block;}
+
+    @media (prefers-reduced-motion:no-preference){
+      .pulse-ring{animation:pulse 2.8s ease-out infinite;}
+      @keyframes pulse{0%{transform:scale(0.7);opacity:0.65;}100%{transform:scale(1);opacity:0;}}
+    }
+
+    .meter-card{border:1px solid var(--line);border-radius:16px;background:var(--panel-2);padding:22px 22px 20px;}
+    .bar{display:flex;height:34px;border-radius:9px;overflow:hidden;border:1px solid var(--line-soft);margin-bottom:14px;}
+    .bar .seg{display:flex;align-items:center;justify-content:center;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12.5px;color:#0A1120;}
+    .bar-legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:10px;}
+    .bar-legend span{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);}
+    .bar-legend i{width:9px;height:9px;border-radius:2px;display:inline-block;}
+    .meter-caption{font-size:14px;color:var(--muted);max-width:480px;}
+    .meter-caption b{color:var(--ink);}
+
+    .chip-cloud{display:flex;flex-wrap:wrap;gap:9px;}
+    .chip{
+      font-family:"IBM Plex Mono",monospace;font-size:12.5px;padding:7px 13px;border-radius:999px;
+      border:1px solid var(--line);color:var(--muted);background:var(--panel-2);white-space:nowrap;
+    }
+    .chip.hl{color:var(--ink);border-color:var(--amber-deep);background:rgba(245,166,35,0.08);}
+
+    .cta{border-top:1px solid var(--line);padding-top:34px;}
+    .cta h2{
+      font-family:"Unbounded",sans-serif;font-weight:700;font-size:clamp(22px,3vw,28px);
+      letter-spacing:-0.3px;margin-bottom:8px;
+    }
+    .cta p{color:var(--muted);font-size:14.5px;max-width:460px;margin-bottom:22px;}
+    .cta p b{color:var(--amber);font-weight:600;}
+    .store-badges{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:30px;}
+    .store-badges img{height:44px;width:auto;}
+
+    .foot-note{
+      font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted-2);line-height:1.8;
+      border-top:1px solid var(--line-soft);padding-top:18px;margin-bottom:28px;
+    }
+
+    footer{font-size:13px;color:var(--muted-2);}
+    footer a{color:var(--muted-2);margin-right:14px;text-decoration:none;}
+    footer a:hover{color:var(--ink);}
+    footer .copy{margin-top:10px;}
+
+    @media (min-width:641px){
+      .network-svg-wrap{display:block;}
+      .network-list{display:none;}
+    }
+
+    @media (max-width:620px){
+      .kpi-grid{grid-template-columns:repeat(2,1fr);}
+      .kpi:nth-child(2){border-right:none;}
+      .kpi:nth-child(odd){border-bottom:1px solid var(--line);}
+      .hero-stat{flex-direction:column;align-items:flex-start;gap:10px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top"><a href="/" data-i18n="nav_back">← Back to CityYoYo</a></nav>
+
+    <div class="langbar" id="langbar" role="group" aria-label="Language"></div>
+
+    <p class="byline" data-i18n="published">Published October 1, 2026 · CityYoYo Team</p>
+
+    <div class="eyebrow" data-i18n="eyebrow">No city limits — live from real usage</div>
+    <h1 data-i18n-html="h1_html">Tap any place on earth. CityYoYo writes and narrates its story <em>while you're still looking at it.</em></h1>
+    <p class="lede" data-i18n-html="lede_html">Nothing here is a demo. These numbers come straight from real tours — real travelers tapping real places, from a street stall in Shanghai to a church square in <b>Velletri, Italy</b>.</p>
+
+    <div class="hero-stat">
+      <div class="num tnum">2.3<span>s</span></div>
+      <div class="num-label"><b data-i18n="hero_title">Median time to first word</b><span data-i18n="hero_desc">From the moment you tap, across every recorded tour, worldwide — not a best case.</span></div>
+    </div>
+
+    <section>
+      <div class="sec-head">
+        <div class="sec-title" data-i18n="by_numbers">By the numbers</div>
+        <div class="sec-note" data-i18n="by_numbers_note">real usage, test devices excluded</div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><div class="v tnum">23</div><div class="l" data-i18n="kpi_countries">Countries tapped in from</div></div>
+        <div class="kpi"><div class="v tnum">69</div><div class="l" data-i18n="kpi_cities">Cities narrated</div></div>
+        <div class="kpi"><div class="v tnum">333</div><div class="l" data-i18n="kpi_tours">AI tours generated</div></div>
+        <div class="kpi"><div class="v tnum">77</div><div class="l" data-i18n="kpi_travelers">Real travelers</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head">
+        <div class="sec-title" data-i18n="live_network_title">Live network · a sample of real tours</div>
+        <div class="sec-note" data-i18n="live_network_note">dot color = how fast it talked back</div>
+      </div>
+      <div class="network-panel">
+
+        <div class="network-svg-wrap">
+          <svg viewBox="-70 -20 800 600" role="img" aria-label="Network diagram of real CityYoYo tours by city, each labeled with tap-to-audio latency in seconds">
+            <g stroke="var(--line-soft)" stroke-width="1" opacity="0.9">
+              <line x1="320" y1="260" x2="320" y2="90"/>
+              <line x1="320" y1="260" x2="425" y2="78"/>
+              <line x1="320" y1="260" x2="467" y2="175"/>
+              <line x1="320" y1="260" x2="530" y2="260"/>
+              <line x1="320" y1="260" x2="467" y2="345"/>
+              <line x1="320" y1="260" x2="425" y2="442"/>
+              <line x1="320" y1="260" x2="320" y2="430"/>
+              <line x1="320" y1="260" x2="215" y2="442"/>
+              <line x1="320" y1="260" x2="173" y2="345"/>
+              <line x1="320" y1="260" x2="110" y2="260"/>
+              <line x1="320" y1="260" x2="173" y2="175"/>
+              <line x1="320" y1="260" x2="215" y2="78"/>
+            </g>
+
+            <circle class="pulse-ring" cx="320" cy="260" r="26" fill="none" stroke="var(--amber)" stroke-width="2"/>
+            <circle cx="320" cy="260" r="19" fill="#0D1729" stroke="var(--amber)" stroke-width="2"/>
+            <circle cx="320" cy="260" r="4.5" fill="var(--amber)"/>
+            <text x="320" y="296" text-anchor="middle" class="hub-label">CityYoYo</text>
+
+            <g>
+              <circle cx="320" cy="90" r="7" fill="#7FBD55"/>
+              <text x="320" y="68" text-anchor="middle" class="node-label">Sydney</text>
+              <text x="320" y="56" text-anchor="middle" class="node-country" data-country="au">AUSTRALIA</text>
+              <text x="320" y="110" text-anchor="middle" class="node-lat" fill="#7FBD55">1.4s</text>
+            </g>
+            <g>
+              <circle cx="425" cy="78" r="7" fill="#7FBD55"/>
+              <text x="440" y="68" text-anchor="start" class="node-label">Nuremberg</text>
+              <text x="440" y="56" text-anchor="start" class="node-country" data-country="de">GERMANY</text>
+              <text x="440" y="100" text-anchor="start" class="node-lat" fill="#7FBD55">1.9s</text>
+            </g>
+            <g>
+              <circle cx="467" cy="175" r="7" fill="#F5A623"/>
+              <text x="484" y="170" text-anchor="start" class="node-label">Alicante</text>
+              <text x="484" y="158" text-anchor="start" class="node-country" data-country="es">SPAIN</text>
+              <text x="484" y="192" text-anchor="start" class="node-lat" fill="#F5A623">2.1s</text>
+            </g>
+            <g>
+              <circle cx="530" cy="260" r="7" fill="#F5A623"/>
+              <text x="548" y="256" text-anchor="start" class="node-label">New York</text>
+              <text x="548" y="244" text-anchor="start" class="node-country" data-country="us">UNITED STATES</text>
+              <text x="548" y="278" text-anchor="start" class="node-lat" fill="#F5A623">2.7s</text>
+            </g>
+            <g>
+              <circle cx="467" cy="345" r="7" fill="#F5A623"/>
+              <text x="484" y="358" text-anchor="start" class="node-label">Velletri</text>
+              <text x="484" y="370" text-anchor="start" class="node-country" data-country="it">ITALY</text>
+              <text x="484" y="340" text-anchor="start" class="node-lat" fill="#F5A623">3.3s</text>
+            </g>
+            <g>
+              <circle cx="425" cy="442" r="7" fill="#F5A623"/>
+              <text x="440" y="458" text-anchor="start" class="node-label">Fuchu, Tokyo</text>
+              <text x="440" y="470" text-anchor="start" class="node-country" data-country="jp">JAPAN</text>
+              <text x="440" y="440" text-anchor="start" class="node-lat" fill="#F5A623">2.5s</text>
+            </g>
+            <g>
+              <circle cx="320" cy="430" r="7" fill="#7FBD55"/>
+              <text x="320" y="452" text-anchor="middle" class="node-label">Minneapolis</text>
+              <text x="320" y="464" text-anchor="middle" class="node-country" data-country="us">UNITED STATES</text>
+              <text x="320" y="412" text-anchor="middle" class="node-lat" fill="#7FBD55">1.6s</text>
+            </g>
+            <g>
+              <circle cx="215" cy="442" r="7" fill="#7FBD55"/>
+              <text x="200" y="458" text-anchor="end" class="node-label">Lyon</text>
+              <text x="200" y="470" text-anchor="end" class="node-country" data-country="fr">FRANCE</text>
+              <text x="200" y="440" text-anchor="end" class="node-lat" fill="#7FBD55">1.4s</text>
+            </g>
+            <g>
+              <circle cx="173" cy="345" r="7" fill="#F5A623"/>
+              <text x="156" y="358" text-anchor="end" class="node-label">Paris</text>
+              <text x="156" y="370" text-anchor="end" class="node-country" data-country="fr">FRANCE</text>
+              <text x="156" y="340" text-anchor="end" class="node-lat" fill="#F5A623">2.1s</text>
+            </g>
+            <g>
+              <circle cx="110" cy="260" r="7" fill="#F5A623"/>
+              <text x="92" y="256" text-anchor="end" class="node-label">Singapore</text>
+              <text x="92" y="244" text-anchor="end" class="node-country" data-country="sg">SINGAPORE</text>
+              <text x="92" y="278" text-anchor="end" class="node-lat" fill="#F5A623">2.4s</text>
+            </g>
+            <g>
+              <circle cx="173" cy="175" r="7" fill="#7FBD55"/>
+              <text x="156" y="170" text-anchor="end" class="node-label">Rosport-Mompach</text>
+              <text x="156" y="158" text-anchor="end" class="node-country" data-country="lu">LUXEMBOURG</text>
+              <text x="156" y="192" text-anchor="end" class="node-lat" fill="#7FBD55">1.6s</text>
+            </g>
+            <g>
+              <circle cx="215" cy="78" r="7" fill="#7FBD55"/>
+              <text x="200" y="68" text-anchor="end" class="node-label">Seoul</text>
+              <text x="200" y="56" text-anchor="end" class="node-country" data-country="kr">SOUTH KOREA</text>
+              <text x="200" y="100" text-anchor="end" class="node-lat" fill="#7FBD55">1.8s</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="network-list" id="network-list"></div>
+
+        <div class="legend">
+          <span><i style="background:#7FBD55"></i><span data-i18n="legend_under2">under 2s</span></span>
+          <span><i style="background:#F5A623"></i><span data-i18n="legend_2to4">2–4s</span></span>
+          <span><i style="background:#E2574C"></i><span data-i18n="legend_4plus">4s+</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head">
+        <div class="sec-title" data-i18n="speed_title">Tap-to-talk speed, across every tour</div>
+        <div class="sec-note" data-i18n="speed_note">306 tours with recorded latency</div>
+      </div>
+      <div class="meter-card">
+        <div class="bar">
+          <div class="seg tnum" style="width:40%;background:#7FBD55;">40%</div>
+          <div class="seg tnum" style="width:40%;background:#F5A623;">40%</div>
+          <div class="seg tnum" style="width:20%;background:#E2574C;color:#F4F1E6;">20%</div>
+        </div>
+        <div class="bar-legend">
+          <span><i style="background:#7FBD55"></i><span data-i18n="legend_under2">under 2s</span></span>
+          <span><i style="background:#F5A623"></i><span data-i18n="legend_2to4">2–4s</span></span>
+          <span><i style="background:#E2574C"></i><span data-i18n="legend_4plus">4s+</span></span>
+        </div>
+        <p class="meter-caption" data-i18n-html="meter_caption_html">4 out of 5 tours start talking in <b>under 4 seconds</b> — including routes that cross continents, like a US traveler's request routed through CityYoYo's Asia-Pacific servers.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head">
+        <div class="sec-title" data-i18n-html="cities_title_html">A few of the <b>69</b> cities CityYoYo has narrated</div>
+        <div class="sec-note" data-i18n="cities_note">real place-taps, not a curated list</div>
+      </div>
+      <div class="chip-cloud">
+        <span class="chip hl">Beijing</span>
+        <span class="chip hl">Shanghai</span>
+        <span class="chip hl">Tokyo</span>
+        <span class="chip hl">Seoul</span>
+        <span class="chip hl">Paris</span>
+        <span class="chip hl">Sydney</span>
+        <span class="chip">Xi'an</span>
+        <span class="chip">Chengdu</span>
+        <span class="chip">Guangzhou</span>
+        <span class="chip">Hangzhou</span>
+        <span class="chip">Hong Kong</span>
+        <span class="chip">Busan</span>
+        <span class="chip">Milan</span>
+        <span class="chip">Florence</span>
+        <span class="chip">Turin</span>
+        <span class="chip">Barcelona</span>
+        <span class="chip">Amsterdam</span>
+        <span class="chip">Frankfurt</span>
+        <span class="chip">Stockholm</span>
+        <span class="chip">Prague</span>
+        <span class="chip">Krakow</span>
+        <span class="chip">Lisbon</span>
+        <span class="chip">Antwerp</span>
+        <span class="chip">London</span>
+        <span class="chip">Chicago</span>
+        <span class="chip">Los Angeles</span>
+        <span class="chip">Ottawa</span>
+        <span class="chip">Canberra</span>
+        <span class="chip">Cusco</span>
+        <span class="chip">Luang Prabang</span>
+        <span class="chip">Saint Petersburg</span>
+        <span class="chip" data-i18n="chip_more">+ 39 more</span>
+      </div>
+    </section>
+
+    <div class="cta">
+      <h2 data-i18n="cta_h2">Your city hasn't been tapped yet.</h2>
+      <p data-i18n-html="cta_p_html">Free on iOS and Android. Open the map, tap anything, <b>hear what's actually there</b> — no script, no pre-recording, no city limits.</p>
+      <div class="store-badges">
+        <a href="https://apps.apple.com/us/app/cityyoyo-audio-city-guide/id6756594840" target="_blank" rel="noopener">
+          <img src="../assets/badge-app-store.svg" alt="Download on the App Store" id="appstore-badge" height="44" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.cityyoyo.audio" target="_blank" rel="noopener">
+          <img src="../assets/badge-google-play.png" alt="Get it on Google Play" id="googleplay-badge" height="44" />
+        </a>
+      </div>
+
+      <div class="foot-note">
+        <div data-i18n="footer_source1">source: place_play_start events</div>
+        <div data-i18n="footer_source2">latency: tap → audible narration</div>
+        <div data-i18n="footer_source3">location: IP-based, approximate</div>
+        <div data-i18n="footer_source4">test devices excluded</div>
+      </div>
+
+      <footer>
+        <a href="/" data-i18n="footer_home">Home</a>
+        <a href="/blog/" data-i18n="footer_blog">Blog</a>
+        <a href="/privacy.html" data-i18n="footer_privacy">Privacy</a>
+        <a href="/terms.html" data-i18n="footer_terms">Terms</a>
+        <p class="copy">&copy; 2026 CityYoYo</p>
+      </footer>
+    </div>
+  </div>
+
+<script>
+(function(){
+  "use strict";
+
+  var LANGS = ["en","es","fr","ko","pt","zh"];
+  var LANG_NAMES = {en:"EN", es:"ES", fr:"FR", ko:"한국어", pt:"PT", zh:"中文"};
+
+  var COUNTRY = {
+    en:{au:"AUSTRALIA",de:"GERMANY",es:"SPAIN",us:"UNITED STATES",it:"ITALY",jp:"JAPAN",fr:"FRANCE",sg:"SINGAPORE",lu:"LUXEMBOURG",kr:"SOUTH KOREA"},
+    es:{au:"AUSTRALIA",de:"ALEMANIA",es:"ESPAÑA",us:"ESTADOS UNIDOS",it:"ITALIA",jp:"JAPÓN",fr:"FRANCIA",sg:"SINGAPUR",lu:"LUXEMBURGO",kr:"COREA DEL SUR"},
+    fr:{au:"AUSTRALIE",de:"ALLEMAGNE",es:"ESPAGNE",us:"ÉTATS-UNIS",it:"ITALIE",jp:"JAPON",fr:"FRANCE",sg:"SINGAPOUR",lu:"LUXEMBOURG",kr:"CORÉE DU SUD"},
+    ko:{au:"호주",de:"독일",es:"스페인",us:"미국",it:"이탈리아",jp:"일본",fr:"프랑스",sg:"싱가포르",lu:"룩셈부르크",kr:"대한민국"},
+    pt:{au:"AUSTRÁLIA",de:"ALEMANHA",es:"ESPANHA",us:"ESTADOS UNIDOS",it:"ITÁLIA",jp:"JAPÃO",fr:"FRANÇA",sg:"SINGAPURA",lu:"LUXEMBURGO",kr:"COREIA DO SUL"},
+    zh:{au:"澳大利亚",de:"德国",es:"西班牙",us:"美国",it:"意大利",jp:"日本",fr:"法国",sg:"新加坡",lu:"卢森堡",kr:"韩国"}
+  };
+
+  var NODES = [
+    {city:"Sydney", country:"au", lat:"1.4s", status:"good"},
+    {city:"Nuremberg", country:"de", lat:"1.9s", status:"good"},
+    {city:"Alicante", country:"es", lat:"2.1s", status:"mid"},
+    {city:"New York", country:"us", lat:"2.7s", status:"mid"},
+    {city:"Velletri", country:"it", lat:"3.3s", status:"mid"},
+    {city:"Fuchu, Tokyo", country:"jp", lat:"2.5s", status:"mid"},
+    {city:"Minneapolis", country:"us", lat:"1.6s", status:"good"},
+    {city:"Lyon", country:"fr", lat:"1.4s", status:"good"},
+    {city:"Paris", country:"fr", lat:"2.1s", status:"mid"},
+    {city:"Singapore", country:"sg", lat:"2.4s", status:"mid"},
+    {city:"Rosport-Mompach", country:"lu", lat:"1.6s", status:"good"},
+    {city:"Seoul", country:"kr", lat:"1.8s", status:"good"}
+  ];
+  var STATUS_COLOR = {good:"#7FBD55", mid:"#F5A623"};
+
+  var T = {
+    en:{
+      title:"No City Limits — Real Travel Stats from CityYoYo",
+      desc:"How fast does CityYoYo start talking after you tap a place? Real numbers from real travelers — 23 countries, 69 cities, 2.3 seconds median.",
+      nav_back:"← Back to CityYoYo",
+      published:"Published October 1, 2026 · CityYoYo Team",
+      eyebrow:"No city limits — live from real usage",
+      h1_html:"Tap any place on earth. CityYoYo writes and narrates its story <em>while you're still looking at it.</em>",
+      lede_html:"Nothing here is a demo. These numbers come straight from real tours — real travelers tapping real places, from a street stall in Shanghai to a church square in <b>Velletri, Italy</b>.",
+      hero_title:"Median time to first word",
+      hero_desc:"From the moment you tap, across every recorded tour, worldwide — not a best case.",
+      by_numbers:"By the numbers",
+      by_numbers_note:"real usage, test devices excluded",
+      kpi_countries:"Countries tapped in from",
+      kpi_cities:"Cities narrated",
+      kpi_tours:"AI tours generated",
+      kpi_travelers:"Real travelers",
+      live_network_title:"Live network · a sample of real tours",
+      live_network_note:"dot color = how fast it talked back",
+      legend_under2:"under 2s", legend_2to4:"2–4s", legend_4plus:"4s+",
+      speed_title:"Tap-to-talk speed, across every tour",
+      speed_note:"306 tours with recorded latency",
+      meter_caption_html:"4 out of 5 tours start talking in <b>under 4 seconds</b> — including routes that cross continents, like a US traveler's request routed through CityYoYo's Asia-Pacific servers.",
+      cities_title_html:"A few of the <b>69</b> cities CityYoYo has narrated",
+      cities_note:"real place-taps, not a curated list",
+      chip_more:"+ 39 more",
+      cta_h2:"Your city hasn't been tapped yet.",
+      cta_p_html:"Free on iOS and Android. Open the map, tap anything, <b>hear what's actually there</b> — no script, no pre-recording, no city limits.",
+      appstore_alt:"Download on the App Store", googleplay_alt:"Get it on Google Play",
+      footer_source1:"source: place_play_start events",
+      footer_source2:"latency: tap → audible narration",
+      footer_source3:"location: IP-based, approximate",
+      footer_source4:"test devices excluded",
+      footer_home:"Home", footer_blog:"Blog", footer_privacy:"Privacy", footer_terms:"Terms"
+    },
+    es:{
+      title:"Sin Límites de Ciudad — Estadísticas Reales de CityYoYo",
+      desc:"¿Qué tan rápido empieza a hablar CityYoYo después de tocar un lugar? Números reales de viajeros reales — 23 países, 69 ciudades, mediana de 2.3 segundos.",
+      nav_back:"← Volver a CityYoYo",
+      published:"Publicado el 1 de octubre de 2026 · Equipo CityYoYo",
+      eyebrow:"Sin límites de ciudad — datos de uso real",
+      h1_html:"Toca cualquier lugar del mundo. CityYoYo escribe y narra su historia <em>mientras todavía lo estás mirando.</em>",
+      lede_html:"Nada de esto es una demostración. Estos números vienen directo de recorridos reales — viajeros reales tocando lugares reales, desde un puesto callejero en Shanghái hasta una plaza de iglesia en <b>Velletri, Italia</b>.",
+      hero_title:"Tiempo mediano hasta la primera palabra",
+      hero_desc:"Desde el momento en que tocas la pantalla, en todos los recorridos registrados, en todo el mundo — no es el mejor caso posible.",
+      by_numbers:"En números",
+      by_numbers_note:"uso real, sin dispositivos de prueba",
+      kpi_countries:"Países desde los que tocaron",
+      kpi_cities:"Ciudades narradas",
+      kpi_tours:"Recorridos generados por IA",
+      kpi_travelers:"Viajeros reales",
+      live_network_title:"Red en vivo · una muestra de recorridos reales",
+      live_network_note:"el color del punto indica qué tan rápido respondió",
+      legend_under2:"menos de 2 s", legend_2to4:"2–4 s", legend_4plus:"más de 4 s",
+      speed_title:"Velocidad de respuesta, en todos los recorridos",
+      speed_note:"306 recorridos con latencia registrada",
+      meter_caption_html:"4 de cada 5 recorridos empiezan a narrar en <b>menos de 4 segundos</b> — incluso en rutas que cruzan continentes, como la solicitud de un viajero en EE. UU. enrutada por los servidores de CityYoYo en Asia-Pacífico.",
+      cities_title_html:"Algunas de las <b>69</b> ciudades que CityYoYo ha narrado",
+      cities_note:"toques reales de lugares, no una lista curada",
+      chip_more:"+ 39 más",
+      cta_h2:"Tu ciudad todavía no ha sido tocada.",
+      cta_p_html:"Gratis en iOS y Android. Abre el mapa, toca cualquier cosa, <b>escucha lo que realmente hay ahí</b> — sin guion, sin grabación previa, sin límites de ciudad.",
+      appstore_alt:"Descargar en la App Store", googleplay_alt:"Disponible en Google Play",
+      footer_source1:"fuente: eventos place_play_start",
+      footer_source2:"latencia: toque → narración audible",
+      footer_source3:"ubicación: aproximada, basada en IP",
+      footer_source4:"dispositivos de prueba excluidos",
+      footer_home:"Inicio", footer_blog:"Blog", footer_privacy:"Política de Privacidad", footer_terms:"Términos de Servicio"
+    },
+    fr:{
+      title:"Sans Limite de Ville — Statistiques Réelles de CityYoYo",
+      desc:"À quelle vitesse CityYoYo commence-t-il à parler après que vous touchez un lieu ? Des chiffres réels, venant de vrais voyageurs — 23 pays, 69 villes, 2,3 secondes en médiane.",
+      nav_back:"← Retour à CityYoYo",
+      published:"Publié le 1 octobre 2026 · Équipe CityYoYo",
+      eyebrow:"Sans limite de ville — données d'utilisation réelle",
+      h1_html:"Touchez n'importe quel lieu sur Terre. CityYoYo écrit et raconte son histoire <em>pendant que vous le regardez encore.</em>",
+      lede_html:"Rien ici n'est une démo. Ces chiffres viennent directement de vraies visites — de vrais voyageurs touchant de vrais lieux, d'un stand de rue à Shanghai jusqu'à une place d'église à <b>Velletri, en Italie</b>.",
+      hero_title:"Temps médian jusqu'au premier mot",
+      hero_desc:"Dès l'instant où vous touchez l'écran, sur toutes les visites enregistrées, dans le monde entier — pas le meilleur des cas.",
+      by_numbers:"En chiffres",
+      by_numbers_note:"usage réel, hors appareils de test",
+      kpi_countries:"Pays d'où l'on a touché l'écran",
+      kpi_cities:"Villes narrées",
+      kpi_tours:"Visites générées par IA",
+      kpi_travelers:"Voyageurs réels",
+      live_network_title:"Réseau en direct · un échantillon de vraies visites",
+      live_network_note:"la couleur du point indique la rapidité de la réponse",
+      legend_under2:"moins de 2 s", legend_2to4:"2–4 s", legend_4plus:"plus de 4 s",
+      speed_title:"Vitesse de réponse, sur toutes les visites",
+      speed_note:"306 visites avec latence enregistrée",
+      meter_caption_html:"4 visites sur 5 commencent à parler en <b>moins de 4 secondes</b> — même sur des trajets qui traversent des continents, comme la requête d'un voyageur américain routée vers les serveurs Asie-Pacifique de CityYoYo.",
+      cities_title_html:"Quelques-unes des <b>69</b> villes que CityYoYo a racontées",
+      cities_note:"de vrais lieux touchés, pas une liste choisie à l'avance",
+      chip_more:"+ 39 autres",
+      cta_h2:"Votre ville n'a pas encore été touchée.",
+      cta_p_html:"Gratuit sur iOS et Android. Ouvrez la carte, touchez n'importe quoi, <b>écoutez ce qui s'y trouve vraiment</b> — pas de script, pas d'enregistrement préalable, pas de limite de ville.",
+      appstore_alt:"Télécharger sur l'App Store", googleplay_alt:"Disponible sur Google Play",
+      footer_source1:"source : événements place_play_start",
+      footer_source2:"latence : toucher → narration audible",
+      footer_source3:"localisation : approximative, basée sur l'IP",
+      footer_source4:"appareils de test exclus",
+      footer_home:"Accueil", footer_blog:"Blog", footer_privacy:"Politique de Confidentialité", footer_terms:"Conditions d'Utilisation"
+    },
+    ko:{
+      title:"도시의 한계 없음 — CityYoYo 실사용 통계",
+      desc:"장소를 탭하면 CityYoYo는 얼마나 빨리 이야기를 시작할까요? 실제 여행자들의 진짜 데이터 — 23개국, 69개 도시, 중앙값 2.3초.",
+      nav_back:"← CityYoYo로 돌아가기",
+      published:"2026년 10월 1일 게시 · CityYoYo 팀",
+      eyebrow:"도시의 한계 없음 — 실제 사용 데이터",
+      h1_html:"지구 어디든 탭하세요. CityYoYo는 당신이 <em>그곳을 바라보는 동안</em> 이야기를 쓰고 들려줍니다.",
+      lede_html:"여기엔 데모가 없습니다. 이 숫자들은 실제 투어에서 그대로 가져온 것입니다 — 상하이의 노점부터 <b>이탈리아 벨레트리</b>의 성당 광장까지, 실제 여행자가 실제 장소를 탭한 기록입니다.",
+      hero_title:"첫 단어까지 걸린 중앙값 시간",
+      hero_desc:"탭하는 순간부터, 전 세계에서 기록된 모든 투어 기준 — 가장 좋은 경우만 골라낸 수치가 아닙니다.",
+      by_numbers:"숫자로 보기",
+      by_numbers_note:"실제 사용 기준, 테스트 기기 제외",
+      kpi_countries:"탭이 발생한 국가 수",
+      kpi_cities:"내레이션된 도시 수",
+      kpi_tours:"AI가 생성한 투어 수",
+      kpi_travelers:"실제 여행자 수",
+      live_network_title:"실시간 네트워크 · 실제 투어 샘플",
+      live_network_note:"점 색상 = 응답 속도",
+      legend_under2:"2초 미만", legend_2to4:"2–4초", legend_4plus:"4초 이상",
+      speed_title:"모든 투어의 탭-응답 속도",
+      speed_note:"지연 시간이 기록된 투어 306건",
+      meter_caption_html:"투어의 5개 중 4개는 <b>4초 이내</b>에 내레이션을 시작합니다 — 미국 여행자의 요청이 CityYoYo의 아시아태평양 서버로 라우팅되는 대륙 간 경로까지 포함해서요.",
+      cities_title_html:"CityYoYo가 내레이션한 <b>69개</b> 도시 중 일부",
+      cities_note:"엄선된 목록이 아닌, 실제 탭 기록입니다",
+      chip_more:"+ 39개 더",
+      cta_h2:"당신의 도시는 아직 탭되지 않았습니다.",
+      cta_p_html:"iOS와 Android에서 무료입니다. 지도를 열고 아무 곳이나 탭해 보세요. <b>그곳에 실제로 무엇이 있는지 들어보세요</b> — 대본도, 사전 녹음도, 도시의 한계도 없습니다.",
+      appstore_alt:"App Store에서 다운로드", googleplay_alt:"Google Play에서 다운로드",
+      footer_source1:"출처: place_play_start 이벤트",
+      footer_source2:"지연 시간: 탭 → 들리는 내레이션",
+      footer_source3:"위치: IP 기반 추정치",
+      footer_source4:"테스트 기기 제외",
+      footer_home:"홈", footer_blog:"블로그", footer_privacy:"개인정보처리방침", footer_terms:"이용약관"
+    },
+    pt:{
+      title:"Sem Limites de Cidade — Estatísticas Reais do CityYoYo",
+      desc:"Com que rapidez o CityYoYo começa a falar depois que você toca em um lugar? Números reais de viajantes reais — 23 países, 69 cidades, mediana de 2,3 segundos.",
+      nav_back:"← Voltar ao CityYoYo",
+      published:"Publicado em 1 de outubro de 2026 · Equipe CityYoYo",
+      eyebrow:"Sem limites de cidade — dados de uso real",
+      h1_html:"Toque em qualquer lugar do planeta. O CityYoYo escreve e narra a história dele <em>enquanto você ainda está olhando para ele.</em>",
+      lede_html:"Nada aqui é uma demonstração. Esses números vêm direto de passeios reais — viajantes reais tocando em lugares reais, de uma barraca de rua em Xangai a uma praça de igreja em <b>Velletri, na Itália</b>.",
+      hero_title:"Tempo mediano até a primeira palavra",
+      hero_desc:"Do momento em que você toca a tela até o início da narração, em todos os passeios registrados, no mundo todo — não é o melhor caso.",
+      by_numbers:"Em números",
+      by_numbers_note:"uso real, sem dispositivos de teste",
+      kpi_countries:"Países de onde vieram os toques",
+      kpi_cities:"Cidades narradas",
+      kpi_tours:"Passeios gerados por IA",
+      kpi_travelers:"Viajantes reais",
+      live_network_title:"Rede ao vivo · uma amostra de passeios reais",
+      live_network_note:"a cor do ponto mostra a velocidade da resposta",
+      legend_under2:"menos de 2 s", legend_2to4:"2–4 s", legend_4plus:"mais de 4 s",
+      speed_title:"Velocidade de resposta, em todos os passeios",
+      speed_note:"306 passeios com latência registrada",
+      meter_caption_html:"4 em cada 5 passeios começam a narrar em <b>menos de 4 segundos</b> — mesmo em rotas que cruzam continentes, como o pedido de um viajante dos EUA roteado pelos servidores do CityYoYo na Ásia-Pacífico.",
+      cities_title_html:"Algumas das <b>69</b> cidades que o CityYoYo já narrou",
+      cities_note:"toques reais em lugares, não uma lista selecionada",
+      chip_more:"+ 39 mais",
+      cta_h2:"Sua cidade ainda não foi tocada.",
+      cta_p_html:"Grátis para iOS e Android. Abra o mapa, toque em qualquer coisa, <b>ouça o que realmente existe ali</b> — sem roteiro, sem gravação prévia, sem limites de cidade.",
+      appstore_alt:"Baixar na App Store", googleplay_alt:"Disponível no Google Play",
+      footer_source1:"fonte: eventos place_play_start",
+      footer_source2:"latência: toque → narração audível",
+      footer_source3:"localização: aproximada, baseada em IP",
+      footer_source4:"dispositivos de teste excluídos",
+      footer_home:"Início", footer_blog:"Blog", footer_privacy:"Política de Privacidade", footer_terms:"Termos de Serviço"
+    },
+    zh:{
+      title:"没有城市界限 — CityYoYo 真实使用数据",
+      desc:"点按一个地点后,CityYoYo 需要多久才能开始讲述?来自真实旅行者的真实数据——23 个国家,69 座城市,中位数 2.3 秒。",
+      nav_back:"← 返回 CityYoYo",
+      published:"发布于 2026 年 10 月 1 日 · CityYoYo 团队",
+      eyebrow:"没有城市界限 — 来自真实使用数据",
+      h1_html:"点按地球上任意一个地点,CityYoYo 会在<em>你还在看着它的时候</em>写好并讲述它的故事。",
+      lede_html:"这里没有一个是演示。这些数字全部来自真实的游览——真实的旅行者点按真实的地点,从上海的一个路边摊,到<b>意大利维莱特里</b>的一座教堂广场。",
+      hero_title:"首句讲解的中位耗时",
+      hero_desc:"从你点按的那一刻算起,覆盖全球记录在案的每一次游览——不是挑出来的最佳情况。",
+      by_numbers:"数据一览",
+      by_numbers_note:"真实使用数据,已排除测试设备",
+      kpi_countries:"用户点按来源国家数",
+      kpi_cities:"已讲解城市数",
+      kpi_tours:"AI 生成的游览次数",
+      kpi_travelers:"真实旅行者数",
+      live_network_title:"实时网络 · 真实游览样本",
+      live_network_note:"圆点颜色代表响应速度",
+      legend_under2:"2 秒以内", legend_2to4:"2–4 秒", legend_4plus:"4 秒以上",
+      speed_title:"每一次游览的响应速度",
+      speed_note:"306 次有延迟记录的游览",
+      meter_caption_html:"五分之四的游览在<b>4 秒以内</b>开始讲述——即便是跨大洲的请求也不例外,比如一位美国旅行者的请求被路由到 CityYoYo 的亚太服务器。",
+      cities_title_html:"CityYoYo 已讲解的 <b>69</b> 座城市中的一部分",
+      cities_note:"真实的点按记录,并非精选名单",
+      chip_more:"+ 还有 39 座",
+      cta_h2:"你的城市还没被点按过。",
+      cta_p_html:"iOS 和 Android 均可免费下载。打开地图,点按任意地方,<b>听听那里究竟有什么故事</b>——没有脚本,没有预先录制,没有城市界限。",
+      appstore_alt:"在 App Store 下载", googleplay_alt:"在 Google Play 获取",
+      footer_source1:"数据来源:place_play_start 事件",
+      footer_source2:"延迟定义:点按 → 可听到的讲解",
+      footer_source3:"位置:基于 IP 的大致定位",
+      footer_source4:"已排除测试设备",
+      footer_home:"首页", footer_blog:"博客", footer_privacy:"隐私政策", footer_terms:"服务条款"
+    }
+  };
+
+  var HTML_LANG = {en:"en", es:"es", fr:"fr", ko:"ko", pt:"pt", zh:"zh-Hans"};
+
+  function buildNetworkList(lang){
+    var el = document.getElementById("network-list");
+    el.innerHTML = "";
+    NODES.forEach(function(n){
+      var row = document.createElement("div");
+      row.className = "network-row";
+      var dot = document.createElement("span");
+      dot.className = "dot";
+      dot.style.background = STATUS_COLOR[n.status];
+      var place = document.createElement("div");
+      place.className = "place";
+      var city = document.createElement("div");
+      city.className = "city";
+      city.textContent = n.city;
+      var country = document.createElement("div");
+      country.className = "country";
+      country.textContent = COUNTRY[lang][n.country];
+      place.appendChild(city);
+      place.appendChild(country);
+      var lat = document.createElement("div");
+      lat.className = "lat tnum";
+      lat.style.color = STATUS_COLOR[n.status];
+      lat.textContent = n.lat;
+      row.appendChild(dot);
+      row.appendChild(place);
+      row.appendChild(lat);
+      el.appendChild(row);
+    });
+  }
+
+  function buildLangbar(current){
+    var bar = document.getElementById("langbar");
+    bar.innerHTML = "";
+    LANGS.forEach(function(code){
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = LANG_NAMES[code];
+      btn.setAttribute("aria-pressed", code === current ? "true" : "false");
+      btn.addEventListener("click", function(){ setLang(code); });
+      bar.appendChild(btn);
+    });
+  }
+
+  function setLang(lang){
+    if (!T[lang]) lang = "en";
+    var strings = T[lang];
+
+    document.documentElement.lang = HTML_LANG[lang];
+    document.getElementById("doc-title").textContent = strings.title;
+    document.getElementById("doc-desc").setAttribute("content", strings.desc);
+    document.getElementById("appstore-badge").alt = strings.appstore_alt;
+    document.getElementById("googleplay-badge").alt = strings.googleplay_alt;
+
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var key = el.getAttribute("data-i18n");
+      if (strings[key] !== undefined) el.textContent = strings[key];
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+      var key = el.getAttribute("data-i18n-html");
+      if (strings[key] !== undefined) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll("[data-country]").forEach(function(el){
+      var key = el.getAttribute("data-country");
+      el.textContent = COUNTRY[lang][key];
+    });
+
+    buildNetworkList(lang);
+    buildLangbar(lang);
+
+    try { localStorage.setItem("cyy_lang", lang); } catch(e){}
+  }
+
+  function detectLang(){
+    try {
+      var saved = localStorage.getItem("cyy_lang");
+      if (saved && T[saved]) return saved;
+    } catch(e){}
+    var nav = (navigator.language || "en").toLowerCase();
+    if (nav.indexOf("zh") === 0) return "zh";
+    for (var i = 0; i < LANGS.length; i++){
+      if (nav.indexOf(LANGS[i]) === 0) return LANGS[i];
+    }
+    return "en";
+  }
+
+  buildLangbar("en");
+  buildNetworkList("en");
+  setLang(detectLang());
+})();
+</script>
+</body>
+</html>
