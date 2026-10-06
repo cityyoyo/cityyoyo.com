@@ -186,42 +186,29 @@
     .kpi .v{font-family:"Unbounded",sans-serif;font-weight:700;font-size:clamp(26px,4vw,34px);color:var(--ink);margin-bottom:6px;}
     .kpi .l{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase;color:var(--muted);}
 
-    .network-panel{
-      border:1px solid var(--line);border-radius:16px;
-      background:radial-gradient(circle at 50% 46%, rgba(245,166,35,0.06), transparent 62%), var(--panel);
-      padding:22px 10px 8px;
+    .tours-panel{
+      border:1px solid var(--line);border-radius:16px;background:var(--panel-2);overflow:hidden;
     }
-    .network-svg-wrap{display:none;}
-    .network-svg-wrap svg{display:block;width:100%;height:auto;overflow:visible;}
-    .node-label{font-family:"IBM Plex Mono",monospace;font-size:11.5px;fill:var(--ink);}
-    .node-country{font-family:"IBM Plex Mono",monospace;font-size:9.5px;fill:var(--muted);}
-    .node-lat{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;}
-    .hub-label{font-family:"Unbounded",sans-serif;font-size:13px;font-weight:700;fill:var(--ink);}
-
-    .network-list{padding:4px 12px 4px;}
-    .network-row{
-      display:flex;align-items:center;gap:12px;
-      padding:12px 4px;border-bottom:1px solid var(--line-soft);
+    .tours-table{width:100%;border-collapse:collapse;font-family:"IBM Plex Mono",monospace;}
+    .tours-table th{
+      text-align:left;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
+      color:var(--muted-2);padding:14px 18px 12px;border-bottom:1px solid var(--line);
     }
-    .network-row:last-child{border-bottom:none;}
-    .network-row .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
-    .network-row .place{flex:1;min-width:0;}
-    .network-row .city{font-family:"IBM Plex Mono",monospace;font-size:13.5px;color:var(--ink);}
-    .network-row .country{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:0.05em;color:var(--muted);}
-    .network-row .lat{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:15px;flex-shrink:0;}
+    .tours-table td{padding:12px 18px;border-bottom:1px solid var(--line-soft);font-size:13.5px;}
+    .tours-table tbody tr:last-child td{border-bottom:none;}
+    .tours-table .city{color:var(--ink);}
+    .tours-table .country{color:var(--muted);font-size:11.5px;letter-spacing:0.05em;}
+    .tours-table .lat{text-align:right;white-space:nowrap;}
+    .tours-table td.lat{font-weight:600;font-size:14.5px;}
+    .tours-table .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:1px;}
 
     .legend{
       display:flex;gap:18px;flex-wrap:wrap;
-      padding:14px 18px 18px;
+      padding:14px 18px 16px;border-top:1px solid var(--line);
       font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);
     }
     .legend span{display:inline-flex;align-items:center;gap:6px;}
     .legend i{width:8px;height:8px;border-radius:50%;display:inline-block;}
-
-    @media (prefers-reduced-motion:no-preference){
-      .pulse-ring{animation:pulse 2.8s ease-out infinite;}
-      @keyframes pulse{0%{transform:scale(0.7);opacity:0.65;}100%{transform:scale(1);opacity:0;}}
-    }
 
     .meter-card{border:1px solid var(--line);border-radius:16px;background:var(--panel-2);padding:22px 22px 20px;}
     .bar{display:flex;height:34px;border-radius:9px;overflow:hidden;border:1px solid var(--line-soft);margin-bottom:14px;}
@@ -259,12 +246,8 @@
     footer a:hover{color:var(--ink);}
     footer .copy{margin-top:10px;}
 
-    @media (min-width:641px){
-      .network-svg-wrap{display:block;}
-      .network-list{display:none;}
-    }
-
     @media (max-width:620px){
+      .tours-table th,.tours-table td{padding-inline:12px;}
       .kpi-grid{grid-template-columns:repeat(2,1fr);}
       .kpi:nth-child(2){border-right:none;}
       .kpi:nth-child(odd){border-bottom:1px solid var(--line);}
@@ -304,109 +287,20 @@
 
     <section>
       <div class="sec-head">
-        <div class="sec-title" data-i18n="live_network_title">Live network · a sample of real tours</div>
-        <div class="sec-note" data-i18n="live_network_note">dot color = how fast it talked back</div>
+        <div class="sec-title" data-i18n="live_network_title">A sample of real tours</div>
+        <div class="sec-note" data-i18n="live_network_note">color = how fast it talked back</div>
       </div>
-      <div class="network-panel">
-
-        <div class="network-svg-wrap">
-          <svg viewBox="-70 -20 800 600" role="img" aria-label="Network diagram of real CityYoYo tours by city, each labeled with tap-to-audio latency in seconds">
-            <g stroke="var(--line-soft)" stroke-width="1" opacity="0.9">
-              <line x1="320" y1="260" x2="320" y2="90"/>
-              <line x1="320" y1="260" x2="425" y2="78"/>
-              <line x1="320" y1="260" x2="467" y2="175"/>
-              <line x1="320" y1="260" x2="530" y2="260"/>
-              <line x1="320" y1="260" x2="467" y2="345"/>
-              <line x1="320" y1="260" x2="425" y2="442"/>
-              <line x1="320" y1="260" x2="320" y2="430"/>
-              <line x1="320" y1="260" x2="215" y2="442"/>
-              <line x1="320" y1="260" x2="173" y2="345"/>
-              <line x1="320" y1="260" x2="110" y2="260"/>
-              <line x1="320" y1="260" x2="173" y2="175"/>
-              <line x1="320" y1="260" x2="215" y2="78"/>
-            </g>
-
-            <circle class="pulse-ring" cx="320" cy="260" r="26" fill="none" stroke="var(--amber)" stroke-width="2"/>
-            <circle cx="320" cy="260" r="19" fill="#0D1729" stroke="var(--amber)" stroke-width="2"/>
-            <circle cx="320" cy="260" r="4.5" fill="var(--amber)"/>
-            <text x="320" y="296" text-anchor="middle" class="hub-label">CityYoYo</text>
-
-            <g>
-              <circle cx="320" cy="90" r="7" fill="#7FBD55"/>
-              <text x="320" y="68" text-anchor="middle" class="node-label">Sydney</text>
-              <text x="320" y="56" text-anchor="middle" class="node-country" data-country="au">AUSTRALIA</text>
-              <text x="320" y="110" text-anchor="middle" class="node-lat" fill="#7FBD55">1.4s</text>
-            </g>
-            <g>
-              <circle cx="425" cy="78" r="7" fill="#7FBD55"/>
-              <text x="440" y="68" text-anchor="start" class="node-label">Nuremberg</text>
-              <text x="440" y="56" text-anchor="start" class="node-country" data-country="de">GERMANY</text>
-              <text x="440" y="100" text-anchor="start" class="node-lat" fill="#7FBD55">1.9s</text>
-            </g>
-            <g>
-              <circle cx="467" cy="175" r="7" fill="#F5A623"/>
-              <text x="484" y="170" text-anchor="start" class="node-label">Alicante</text>
-              <text x="484" y="158" text-anchor="start" class="node-country" data-country="es">SPAIN</text>
-              <text x="484" y="192" text-anchor="start" class="node-lat" fill="#F5A623">2.1s</text>
-            </g>
-            <g>
-              <circle cx="530" cy="260" r="7" fill="#F5A623"/>
-              <text x="548" y="256" text-anchor="start" class="node-label">New York</text>
-              <text x="548" y="244" text-anchor="start" class="node-country" data-country="us">UNITED STATES</text>
-              <text x="548" y="278" text-anchor="start" class="node-lat" fill="#F5A623">2.7s</text>
-            </g>
-            <g>
-              <circle cx="467" cy="345" r="7" fill="#F5A623"/>
-              <text x="484" y="358" text-anchor="start" class="node-label">Velletri</text>
-              <text x="484" y="370" text-anchor="start" class="node-country" data-country="it">ITALY</text>
-              <text x="484" y="340" text-anchor="start" class="node-lat" fill="#F5A623">3.3s</text>
-            </g>
-            <g>
-              <circle cx="425" cy="442" r="7" fill="#F5A623"/>
-              <text x="440" y="458" text-anchor="start" class="node-label">Fuchu, Tokyo</text>
-              <text x="440" y="470" text-anchor="start" class="node-country" data-country="jp">JAPAN</text>
-              <text x="440" y="440" text-anchor="start" class="node-lat" fill="#F5A623">2.5s</text>
-            </g>
-            <g>
-              <circle cx="320" cy="430" r="7" fill="#7FBD55"/>
-              <text x="320" y="452" text-anchor="middle" class="node-label">Minneapolis</text>
-              <text x="320" y="464" text-anchor="middle" class="node-country" data-country="us">UNITED STATES</text>
-              <text x="320" y="412" text-anchor="middle" class="node-lat" fill="#7FBD55">1.6s</text>
-            </g>
-            <g>
-              <circle cx="215" cy="442" r="7" fill="#7FBD55"/>
-              <text x="200" y="458" text-anchor="end" class="node-label">Lyon</text>
-              <text x="200" y="470" text-anchor="end" class="node-country" data-country="fr">FRANCE</text>
-              <text x="200" y="440" text-anchor="end" class="node-lat" fill="#7FBD55">1.4s</text>
-            </g>
-            <g>
-              <circle cx="173" cy="345" r="7" fill="#F5A623"/>
-              <text x="156" y="358" text-anchor="end" class="node-label">Paris</text>
-              <text x="156" y="370" text-anchor="end" class="node-country" data-country="fr">FRANCE</text>
-              <text x="156" y="340" text-anchor="end" class="node-lat" fill="#F5A623">2.1s</text>
-            </g>
-            <g>
-              <circle cx="110" cy="260" r="7" fill="#F5A623"/>
-              <text x="92" y="256" text-anchor="end" class="node-label">Singapore</text>
-              <text x="92" y="244" text-anchor="end" class="node-country" data-country="sg">SINGAPORE</text>
-              <text x="92" y="278" text-anchor="end" class="node-lat" fill="#F5A623">2.4s</text>
-            </g>
-            <g>
-              <circle cx="173" cy="175" r="7" fill="#7FBD55"/>
-              <text x="156" y="170" text-anchor="end" class="node-label">Rosport-Mompach</text>
-              <text x="156" y="158" text-anchor="end" class="node-country" data-country="lu">LUXEMBOURG</text>
-              <text x="156" y="192" text-anchor="end" class="node-lat" fill="#7FBD55">1.6s</text>
-            </g>
-            <g>
-              <circle cx="215" cy="78" r="7" fill="#7FBD55"/>
-              <text x="200" y="68" text-anchor="end" class="node-label">Seoul</text>
-              <text x="200" y="56" text-anchor="end" class="node-country" data-country="kr">SOUTH KOREA</text>
-              <text x="200" y="100" text-anchor="end" class="node-lat" fill="#7FBD55">1.8s</text>
-            </g>
-          </svg>
-        </div>
-
-        <div class="network-list" id="network-list"></div>
+      <div class="tours-panel">
+        <table class="tours-table">
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="th_city">City</th>
+              <th scope="col" data-i18n="th_country">Country</th>
+              <th scope="col" class="lat" data-i18n="th_latency">Tap → audio</th>
+            </tr>
+          </thead>
+          <tbody id="tours-body"></tbody>
+        </table>
 
         <div class="legend">
           <span><i style="background:#7FBD55"></i><span data-i18n="legend_under2">under 2s</span></span>
@@ -555,8 +449,9 @@
       kpi_cities:"Cities narrated",
       kpi_tours:"AI tours generated",
       kpi_travelers:"Real travelers",
-      live_network_title:"Live network · a sample of real tours",
-      live_network_note:"dot color = how fast it talked back",
+      live_network_title:"A sample of real tours",
+      live_network_note:"color = how fast it talked back",
+      th_city:"City", th_country:"Country", th_latency:"Tap → audio",
       legend_under2:"under 2s", legend_2to4:"2–4s", legend_4plus:"4s+",
       speed_title:"Tap-to-talk speed, across every tour",
       speed_note:"306 tours with recorded latency",
@@ -589,8 +484,9 @@
       kpi_cities:"Ciudades narradas",
       kpi_tours:"Recorridos generados por IA",
       kpi_travelers:"Viajeros reales",
-      live_network_title:"Red en vivo · una muestra de recorridos reales",
-      live_network_note:"el color del punto indica qué tan rápido respondió",
+      live_network_title:"Una muestra de recorridos reales",
+      live_network_note:"el color indica qué tan rápido respondió",
+      th_city:"Ciudad", th_country:"País", th_latency:"Toque → audio",
       legend_under2:"menos de 2 s", legend_2to4:"2–4 s", legend_4plus:"más de 4 s",
       speed_title:"Velocidad de respuesta, en todos los recorridos",
       speed_note:"306 recorridos con latencia registrada",
@@ -623,8 +519,9 @@
       kpi_cities:"Villes narrées",
       kpi_tours:"Visites générées par IA",
       kpi_travelers:"Voyageurs réels",
-      live_network_title:"Réseau en direct · un échantillon de vraies visites",
-      live_network_note:"la couleur du point indique la rapidité de la réponse",
+      live_network_title:"Un échantillon de vraies visites",
+      live_network_note:"la couleur indique la rapidité de la réponse",
+      th_city:"Ville", th_country:"Pays", th_latency:"Toucher → audio",
       legend_under2:"moins de 2 s", legend_2to4:"2–4 s", legend_4plus:"plus de 4 s",
       speed_title:"Vitesse de réponse, sur toutes les visites",
       speed_note:"306 visites avec latence enregistrée",
@@ -657,8 +554,9 @@
       kpi_cities:"내레이션된 도시 수",
       kpi_tours:"AI가 생성한 투어 수",
       kpi_travelers:"실제 여행자 수",
-      live_network_title:"실시간 네트워크 · 실제 투어 샘플",
-      live_network_note:"점 색상 = 응답 속도",
+      live_network_title:"실제 투어 샘플",
+      live_network_note:"색상 = 응답 속도",
+      th_city:"도시", th_country:"국가", th_latency:"탭 → 음성",
       legend_under2:"2초 미만", legend_2to4:"2–4초", legend_4plus:"4초 이상",
       speed_title:"모든 투어의 탭-응답 속도",
       speed_note:"지연 시간이 기록된 투어 306건",
@@ -691,8 +589,9 @@
       kpi_cities:"Cidades narradas",
       kpi_tours:"Passeios gerados por IA",
       kpi_travelers:"Viajantes reais",
-      live_network_title:"Rede ao vivo · uma amostra de passeios reais",
-      live_network_note:"a cor do ponto mostra a velocidade da resposta",
+      live_network_title:"Uma amostra de passeios reais",
+      live_network_note:"a cor mostra a velocidade da resposta",
+      th_city:"Cidade", th_country:"País", th_latency:"Toque → áudio",
       legend_under2:"menos de 2 s", legend_2to4:"2–4 s", legend_4plus:"mais de 4 s",
       speed_title:"Velocidade de resposta, em todos os passeios",
       speed_note:"306 passeios com latência registrada",
@@ -725,8 +624,9 @@
       kpi_cities:"已讲解城市数",
       kpi_tours:"AI 生成的游览次数",
       kpi_travelers:"真实旅行者数",
-      live_network_title:"实时网络 · 真实游览样本",
-      live_network_note:"圆点颜色代表响应速度",
+      live_network_title:"真实游览样本",
+      live_network_note:"颜色代表响应速度",
+      th_city:"城市", th_country:"国家", th_latency:"点按 → 出声",
       legend_under2:"2 秒以内", legend_2to4:"2–4 秒", legend_4plus:"4 秒以上",
       speed_title:"每一次游览的响应速度",
       speed_note:"306 次有延迟记录的游览",
@@ -747,33 +647,29 @@
 
   var HTML_LANG = {en:"en", es:"es", fr:"fr", ko:"ko", pt:"pt", zh:"zh-Hans"};
 
-  function buildNetworkList(lang){
-    var el = document.getElementById("network-list");
-    el.innerHTML = "";
-    NODES.forEach(function(n){
-      var row = document.createElement("div");
-      row.className = "network-row";
+  function buildToursTable(lang){
+    var body = document.getElementById("tours-body");
+    body.innerHTML = "";
+    NODES.slice().sort(function(x, y){ return parseFloat(x.lat) - parseFloat(y.lat); }).forEach(function(n){
+      var tr = document.createElement("tr");
+      var city = document.createElement("td");
+      city.className = "city";
       var dot = document.createElement("span");
       dot.className = "dot";
       dot.style.background = STATUS_COLOR[n.status];
-      var place = document.createElement("div");
-      place.className = "place";
-      var city = document.createElement("div");
-      city.className = "city";
-      city.textContent = n.city;
-      var country = document.createElement("div");
+      city.appendChild(dot);
+      city.appendChild(document.createTextNode(n.city));
+      var country = document.createElement("td");
       country.className = "country";
       country.textContent = COUNTRY[lang][n.country];
-      place.appendChild(city);
-      place.appendChild(country);
-      var lat = document.createElement("div");
+      var lat = document.createElement("td");
       lat.className = "lat tnum";
       lat.style.color = STATUS_COLOR[n.status];
       lat.textContent = n.lat;
-      row.appendChild(dot);
-      row.appendChild(place);
-      row.appendChild(lat);
-      el.appendChild(row);
+      tr.appendChild(city);
+      tr.appendChild(country);
+      tr.appendChild(lat);
+      body.appendChild(tr);
     });
   }
 
@@ -808,12 +704,7 @@
       var key = el.getAttribute("data-i18n-html");
       if (strings[key] !== undefined) el.innerHTML = strings[key];
     });
-    document.querySelectorAll("[data-country]").forEach(function(el){
-      var key = el.getAttribute("data-country");
-      el.textContent = COUNTRY[lang][key];
-    });
-
-    buildNetworkList(lang);
+    buildToursTable(lang);
     buildLangbar(lang);
 
     try { localStorage.setItem("cyy_lang", lang); } catch(e){}
@@ -833,7 +724,7 @@
   }
 
   buildLangbar("en");
-  buildNetworkList("en");
+  buildToursTable("en");
   setLang(detectLang());
 })();
 </script>
