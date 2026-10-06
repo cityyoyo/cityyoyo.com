@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CityYoYo — 面向日本、韩国、亚洲及全球的 AI 语音城市导览与免提步行游</title>
+  <title>CityYoYo — AI 语音导览:日本、韩国及全球</title>
   <meta name="description" content="CityYoYo:免费的 AI 语音城市导览。点按任意地点即可听到 AI 讲述的故事,或开启漫游模式免提探索。支持离线使用,6 种语言,覆盖全球。" />
   <meta property="og:title" content="CityYoYo — AI 语音城市导览与免提步行游" />
   <meta property="og:description" content="在地图上点按任意地点即可听到 AI 讲述的故事,或戴上耳机边走边听——漫游模式自动讲解。iOS 与 Android 免费。" />
@@ -264,15 +264,14 @@
       justify-content: center;
     }
     .phone-frame {
-      max-width: 320px;
+      max-width: 360px;
       width: 100%;
     }
     .phone-frame img {
       width: 100%;
       height: auto;
-      border-radius: 24px;
-      box-shadow: 0 32px 80px rgba(15,23,42,0.18);
       display: block;
+      filter: drop-shadow(0 28px 40px rgba(15,23,42,0.22));
     }
 
     /* HOW IT WORKS */
@@ -576,6 +575,15 @@
     .lang-switch a:hover { color: var(--ink); }
     .lang-switch .lang-current { color: var(--ink); }
     @media (max-width: 768px) { .lang-switch { gap: 6px; font-size: 11px; } }
+    /* REAL-USAGE PROOF STRIP */
+    .proof { max-width: 1100px; margin: auto; padding: 0 24px 56px; }
+    .proof-inner { border: 1px solid var(--border); border-radius: var(--radius); background: white; padding: 24px; }
+    .proof-label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 16px; }
+    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 16px; }
+    .proof-num { font-size: 32px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+    .proof-desc { font-size: 13px; color: var(--muted); }
+    .proof-link { font-size: 14px; color: var(--muted); }
+    @media (max-width: 768px) { .proof-grid { grid-template-columns: repeat(2, 1fr); } }
   </style>
 </head>
 <body>
@@ -598,8 +606,8 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-eyebrow">AI 语音城市导览</span>
-      <h1>每个地方<br>都有一个<span>故事。</span></h1>
+      <span class="hero-eyebrow">每个地方都有一个故事</span>
+      <h1>任何城市的<br><span>AI 语音导览</span></h1>
       <p class="hero-sub">CityYoYo 提供两种探索城市的方式——在地图上点按任意地点即可听到它的故事,或者戴上耳机边走边听,由漫游模式免提自动为你讲解。</p>
       <div class="store-badges">
         <a href="https://apps.apple.com/us/app/cityyoyo-audio-city-guide/id6756594840" target="_blank" rel="noopener">
@@ -613,8 +621,25 @@
     </div>
     <div class="hero-visual">
       <div class="phone-frame">
-        <img src="../assets/hero-screenshot.png" alt="CityYoYo 主屏幕——选择地图探索或耳机漫游" />
+        <picture>
+          <source srcset="../assets/hero-duo.webp" type="image/webp" />
+          <img src="../assets/hero-duo.png" alt="CityYoYo 主屏幕——选择地图探索或耳机漫游" width="720" height="1000" fetchpriority="high" />
+        </picture>
       </div>
+    </div>
+  </section>
+
+  <!-- REAL-USAGE PROOF -->
+  <section class="proof">
+    <div class="proof-inner">
+      <p class="proof-label">真实使用数据,不是演示</p>
+      <div class="proof-grid">
+          <div><div class="proof-num">23</div><div class="proof-desc">国家</div></div>
+          <div><div class="proof-num">69</div><div class="proof-desc">已讲解城市</div></div>
+          <div><div class="proof-num">333</div><div class="proof-desc">AI 生成游览</div></div>
+          <div><div class="proof-num">2.3秒</div><div class="proof-desc">首句讲解中位耗时</div></div>
+      </div>
+      <a href="/blog/no-city-limits-stats.html" class="proof-link">查看真实数据 &#8594;</a>
     </div>
   </section>
 
@@ -697,32 +722,47 @@
       <p style="font-size: 16px; color: var(--muted); max-width: 640px; margin-bottom: 40px;">
         CityYoYo 的 AI 语音导览适用于世界任何地方——在地图上点按任意地点,或戴上耳机让漫游模式在你行走时讲解。非常适合探索亚洲及其他地区的独立旅行者。
       </p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px;">
         <a href="/zh/chinawalk/" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
           <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1E8;&#x1F1F3;</div>
           <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">中国 &#8594;</h3>
           <p style="font-size: 13px; color: var(--muted);">北京、张家界、成都——试试专为中国打造的 ChinaWalk:无需 VPN,地名已翻译。</p>
         </a>
-        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+        <a href="/zh/cities/#asia" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
           <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1EF;&#x1F1F5;</div>
-          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">日本</h3>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">日本 &#8594;</h3>
           <p style="font-size: 13px; color: var(--muted);">东京、京都、大阪、奈良——聆听每条小巷、神社与街区背后由 AI 讲述的故事。</p>
-        </div>
-        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+        </a>
+        <a href="/zh/cities/#asia" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
           <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1F0;&#x1F1F7;</div>
-          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">韩国</h3>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">韩国 &#8594;</h3>
           <p style="font-size: 13px; color: var(--muted);">首尔、釜山、庆州——古老宫殿与现代街区,均以你的语言提供丰富讲解。</p>
-        </div>
-        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+        </a>
+        <a href="/zh/cities/#asia" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
           <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1FB;&#x1F1F3;</div>
-          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">越南</h3>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">越南 &#8594;</h3>
           <p style="font-size: 13px; color: var(--muted);">河内、胡志明市、会安——发掘每条街道与地标背后层层叠叠的历史。</p>
-        </div>
-        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+        </a>
+        <a href="/zh/cities/#asia" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <div style="font-size: 24px; margin-bottom: 8px;">&#x1F6D5;</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">东南亚 &#8594;</h3>
+          <p style="font-size: 13px; color: var(--muted);">曼谷、清迈、新加坡、巴厘岛——寺庙、夜市与老城区,用你的语言讲给你听。</p>
+        </a>
+        <a href="/zh/cities/#europe" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <div style="font-size: 24px; margin-bottom: 8px;">&#x1F3F0;</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">欧洲 &#8594;</h3>
+          <p style="font-size: 13px; color: var(--muted);">巴黎、里昂、罗马、巴塞罗那——从宏伟广场到宁静的乡村教堂,每一站都有自己的故事。</p>
+        </a>
+        <a href="/zh/cities/#americas" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <div style="font-size: 24px; margin-bottom: 8px;">&#x1F5FD;</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">美洲 &#8594;</h3>
+          <p style="font-size: 13px; color: var(--muted);">纽约、芝加哥、墨西哥城、库斯科——街区、广场与遗迹,边走边听讲解。</p>
+        </a>
+        <a href="/zh/cities/" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
           <div style="font-size: 24px; margin-bottom: 8px;">&#x1F30D;</div>
-          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">全球</h3>
-          <p style="font-size: 13px; color: var(--muted);">巴黎、清迈、马拉喀什、库斯科——CityYoYo 的 AI 支持 6 种语言,适用于地球上任意地点。</p>
-        </div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">全球 &#8594;</h3>
+          <p style="font-size: 13px; color: var(--muted);">悉尼、迪拜、马拉喀什、开普敦——CityYoYo 的 AI 支持 6 种语言,适用于地球上任意地点。</p>
+        </a>
       </div>
       <p style="margin-top: 20px; font-size: 14px;"><a href="/zh/cities/" style="color: var(--muted);">查看完整城市列表 &#8594;</a></p>
     </div>
@@ -749,17 +789,28 @@
       <p class="section-label">博客精选</p>
       <h2 style="margin-bottom: 32px;">故事与指南</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+        <a href="/blog/no-city-limits-stats.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">2026年10月1日</p>
+          <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">没有城市界限 — CityYoYo 真实使用数据</p>
+          <p style="font-size: 14px; color: var(--muted);">23 个国家、69 座城市,从点按到第一句讲解中位数 2.3 秒——来自真实游览的真实数据。</p>
+        </a>
+        <a href="/blog/japan-trip-leave-gaps.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">2026年9月22日</p>
+          <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">What Japan Taught Me About Leaving Gaps in My Itinerary</p>
+          <p style="font-size: 14px; color: var(--muted);">为什么在京都和东京留出空闲的下午,反而成了旅途中最好的时光。</p>
+        </a>
+        <a href="/blog/china-travel-app-vpn-language-questions.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">2026年8月14日</p>
+          <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">Do You Need a VPN for a China Travel App? And Other Real Questions</p>
+          <p style="font-size: 14px; color: var(--muted);">需要 VPN 吗?看不懂中文地名怎么办?写给来华旅行者的直接解答。</p>
+        </a>
         <a href="/blog/best-city-audio-tour-apps.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
-          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">April 5, 2026</p>
+          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">2026年4月5日</p>
           <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">Best City Audio Tour Apps in 2026: Compared Side by Side</p>
           <p style="font-size: 14px; color: var(--muted);">CityYoYo、Rick Steves Audio Europe、VoiceMap、Izi.Travel 和 GPSmyCity——诚实对比。</p>
         </a>
-        <a href="/blog/tokyo-ramen-alley-origin-story.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
-          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">April 4, 2026</p>
-          <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">I Was Waiting for Ramen in a Tokyo Alley. That's How This App Was Born.</p>
-          <p style="font-size: 14px; color: var(--muted);">CityYoYo 的起源故事。</p>
-        </a>
       </div>
+      <p style="margin-top: 20px; font-size: 14px;"><a href="/blog/" style="color: var(--muted);">查看全部文章 &#8594;</a></p>
     </div>
   </section>
 

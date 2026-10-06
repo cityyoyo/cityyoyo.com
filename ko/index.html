@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CityYoYo — 일본, 한국, 아시아 및 전 세계를 위한 AI 오디오 도시 가이드 & 핸즈프리 도보 투어</title>
+  <title>CityYoYo — AI 오디오 투어 가이드: 일본, 한국 및 전 세계</title>
   <meta name="description" content="CityYoYo: 무료 AI 오디오 도시 가이드. 아무 장소나 탭하면 AI가 들려주는 이야기를 들을 수 있고, 투어 모드로 걸으면서 손을 쓰지 않고 탐험할 수 있습니다. 오프라인 지원, 6개 언어, 전 세계 어디서나." />
   <meta property="og:title" content="CityYoYo — AI 오디오 도시 가이드 & 핸즈프리 도보 투어" />
   <meta property="og:description" content="지도에서 아무 장소나 탭하면 AI가 들려주는 이야기를 들을 수 있고, 헤드폰을 끼고 걷기만 하면 투어 모드가 자동으로 안내합니다. iOS와 Android에서 무료." />
@@ -264,15 +264,14 @@
       justify-content: center;
     }
     .phone-frame {
-      max-width: 320px;
+      max-width: 360px;
       width: 100%;
     }
     .phone-frame img {
       width: 100%;
       height: auto;
-      border-radius: 24px;
-      box-shadow: 0 32px 80px rgba(15,23,42,0.18);
       display: block;
+      filter: drop-shadow(0 28px 40px rgba(15,23,42,0.22));
     }
 
     /* HOW IT WORKS */
@@ -576,6 +575,15 @@
     .lang-switch a:hover { color: var(--ink); }
     .lang-switch .lang-current { color: var(--ink); }
     @media (max-width: 768px) { .lang-switch { gap: 6px; font-size: 11px; } }
+    /* REAL-USAGE PROOF STRIP */
+    .proof { max-width: 1100px; margin: auto; padding: 0 24px 56px; }
+    .proof-inner { border: 1px solid var(--border); border-radius: var(--radius); background: white; padding: 24px; }
+    .proof-label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 16px; }
+    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 16px; }
+    .proof-num { font-size: 32px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+    .proof-desc { font-size: 13px; color: var(--muted); }
+    .proof-link { font-size: 14px; color: var(--muted); }
+    @media (max-width: 768px) { .proof-grid { grid-template-columns: repeat(2, 1fr); } }
   </style>
 </head>
 <body>
@@ -598,8 +606,8 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-eyebrow">AI 오디오 도시 가이드</span>
-      <h1>모든 장소에는<br><span>이야기</span>가 있습니다.</h1>
+      <span class="hero-eyebrow">모든 장소에는 이야기가 있습니다</span>
+      <h1>어떤 도시든,<br><span>AI 오디오 가이드</span></h1>
       <p class="hero-sub">CityYoYo는 도보로 도시를 탐험하는 두 가지 방법을 제공합니다 — 지도에서 아무 장소나 탭하면 그곳의 이야기를 들을 수 있고, 헤드폰을 끼고 걷기만 하면 투어 모드가 손을 쓰지 않고 자동으로 안내해 줍니다.</p>
       <div class="store-badges">
         <a href="https://apps.apple.com/us/app/cityyoyo-audio-city-guide/id6756594840" target="_blank" rel="noopener">
@@ -613,8 +621,25 @@
     </div>
     <div class="hero-visual">
       <div class="phone-frame">
-        <img src="../assets/hero-screenshot.png" alt="CityYoYo 홈 화면 — 지도에서 익스플로어 또는 헤드폰으로 투어 선택" />
+        <picture>
+          <source srcset="../assets/hero-duo.webp" type="image/webp" />
+          <img src="../assets/hero-duo.png" alt="CityYoYo 홈 화면 — 지도에서 익스플로어 또는 헤드폰으로 투어 선택" width="720" height="1000" fetchpriority="high" />
+        </picture>
       </div>
+    </div>
+  </section>
+
+  <!-- REAL-USAGE PROOF -->
+  <section class="proof">
+    <div class="proof-inner">
+      <p class="proof-label">데모가 아닌 실제 사용 데이터</p>
+      <div class="proof-grid">
+          <div><div class="proof-num">23</div><div class="proof-desc">국가</div></div>
+          <div><div class="proof-num">69</div><div class="proof-desc">내레이션된 도시</div></div>
+          <div><div class="proof-num">333</div><div class="proof-desc">AI 생성 투어</div></div>
+          <div><div class="proof-num">2.3초</div><div class="proof-desc">첫 단어까지 중앙값 시간</div></div>
+      </div>
+      <a href="/blog/no-city-limits-stats.html" class="proof-link">실제 수치 보기 &#8594;</a>
     </div>
   </section>
 
@@ -697,32 +722,47 @@
       <p style="font-size: 16px; color: var(--muted); max-width: 640px; margin-bottom: 40px;">
         CityYoYo의 AI 오디오 가이드는 전 세계 어디에서나 작동합니다 — 지도에서 아무 장소나 탭하거나, 헤드폰을 끼고 걸으면서 투어 모드가 안내하도록 하세요. 아시아를 비롯한 여러 지역을 탐험하는 독립 여행자에게 완벽합니다.
       </p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px;">
         <a href="/ko/chinawalk/" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
           <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1E8;&#x1F1F3;</div>
           <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">중국 &#8594;</h3>
           <p style="font-size: 13px; color: var(--muted);">베이징, 장자제, 청두 — 중국에 맞춘 ChinaWalk을 사용해 보세요: VPN 불필요, 장소명 번역 제공.</p>
         </a>
-        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+        <a href="/ko/cities/#asia" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
           <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1EF;&#x1F1F5;</div>
-          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">일본</h3>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">일본 &#8594;</h3>
           <p style="font-size: 13px; color: var(--muted);">도쿄, 교토, 오사카, 나라 — 골목, 신사, 동네마다 담긴 AI 내레이션 이야기를 들어보세요.</p>
-        </div>
-        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+        </a>
+        <a href="/ko/cities/#asia" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
           <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1F0;&#x1F1F7;</div>
-          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">한국</h3>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">한국 &#8594;</h3>
           <p style="font-size: 13px; color: var(--muted);">서울, 부산, 경주 — 고궁부터 현대적인 지역까지, 모두 당신의 언어로 풍부하게 안내합니다.</p>
-        </div>
-        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+        </a>
+        <a href="/ko/cities/#asia" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
           <div style="font-size: 24px; margin-bottom: 8px;">&#x1F1FB;&#x1F1F3;</div>
-          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">베트남</h3>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">베트남 &#8594;</h3>
           <p style="font-size: 13px; color: var(--muted);">하노이, 호치민시, 호이안 — 거리와 랜드마크마다 겹겹이 쌓인 역사를 발견하세요.</p>
-        </div>
-        <div style="padding: 20px; border: 1px solid var(--border); border-radius: var(--radius);">
+        </a>
+        <a href="/ko/cities/#asia" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <div style="font-size: 24px; margin-bottom: 8px;">&#x1F6D5;</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">동남아시아 &#8594;</h3>
+          <p style="font-size: 13px; color: var(--muted);">방콕, 치앙마이, 싱가포르, 발리 — 사원, 야시장, 옛 거리를 당신의 언어로 들어보세요.</p>
+        </a>
+        <a href="/ko/cities/#europe" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <div style="font-size: 24px; margin-bottom: 8px;">&#x1F3F0;</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">유럽 &#8594;</h3>
+          <p style="font-size: 13px; color: var(--muted);">파리, 리옹, 로마, 바르셀로나 — 웅장한 광장부터 조용한 마을 성당까지, 모든 곳에 이야기가 있습니다.</p>
+        </a>
+        <a href="/ko/cities/#americas" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <div style="font-size: 24px; margin-bottom: 8px;">&#x1F5FD;</div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">아메리카 &#8594;</h3>
+          <p style="font-size: 13px; color: var(--muted);">뉴욕, 시카고, 멕시코시티, 쿠스코 — 거리, 광장, 유적을 걸으면서 들어보세요.</p>
+        </a>
+        <a href="/ko/cities/" style="display: block; padding: 20px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
           <div style="font-size: 24px; margin-bottom: 8px;">&#x1F30D;</div>
-          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">전 세계</h3>
-          <p style="font-size: 13px; color: var(--muted);">파리, 치앙마이, 마라케시, 쿠스코 — CityYoYo의 AI는 6개 언어로 지구 어디서든 작동합니다.</p>
-        </div>
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">전 세계 &#8594;</h3>
+          <p style="font-size: 13px; color: var(--muted);">시드니, 두바이, 마라케시, 케이프타운 — CityYoYo의 AI는 6개 언어로 지구 어디서든 작동합니다.</p>
+        </a>
       </div>
       <p style="margin-top: 20px; font-size: 14px;"><a href="/ko/cities/" style="color: var(--muted);">전체 도시 목록 보기 &#8594;</a></p>
     </div>
@@ -749,17 +789,28 @@
       <p class="section-label">블로그에서</p>
       <h2 style="margin-bottom: 32px;">이야기와 가이드</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+        <a href="/blog/no-city-limits-stats.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">2026년 10월 1일</p>
+          <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">도시의 한계 없음 — CityYoYo 실사용 통계</p>
+          <p style="font-size: 14px; color: var(--muted);">23개국, 69개 도시, 탭에서 첫 단어까지 중앙값 2.3초 — 실제 투어에서 나온 실제 수치.</p>
+        </a>
+        <a href="/blog/japan-trip-leave-gaps.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">2026년 9월 22일</p>
+          <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">What Japan Taught Me About Leaving Gaps in My Itinerary</p>
+          <p style="font-size: 14px; color: var(--muted);">교토와 도쿄에서 비워 둔 오후가 여행의 가장 좋은 순간이 된 이유.</p>
+        </a>
+        <a href="/blog/china-travel-app-vpn-language-questions.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
+          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">2026년 8월 14일</p>
+          <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">Do You Need a VPN for a China Travel App? And Other Real Questions</p>
+          <p style="font-size: 14px; color: var(--muted);">VPN이 필요할까요? 중국어 장소명은 어떻게 읽을까요? 중국 여행자를 위한 솔직한 답변.</p>
+        </a>
         <a href="/blog/best-city-audio-tour-apps.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
-          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">April 5, 2026</p>
+          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">2026년 4월 5일</p>
           <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">Best City Audio Tour Apps in 2026: Compared Side by Side</p>
           <p style="font-size: 14px; color: var(--muted);">CityYoYo, Rick Steves Audio Europe, VoiceMap, Izi.Travel, GPSmyCity — 솔직하게 비교했습니다.</p>
         </a>
-        <a href="/blog/tokyo-ramen-alley-origin-story.html" style="display: block; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: inherit;">
-          <p style="font-size: 13px; color: var(--subtle); margin-bottom: 8px;">April 4, 2026</p>
-          <p style="font-size: 17px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px;">I Was Waiting for Ramen in a Tokyo Alley. That's How This App Was Born.</p>
-          <p style="font-size: 14px; color: var(--muted);">CityYoYo의 탄생 이야기.</p>
-        </a>
       </div>
+      <p style="margin-top: 20px; font-size: 14px;"><a href="/blog/" style="color: var(--muted);">모든 글 보기 &#8594;</a></p>
     </div>
   </section>
 

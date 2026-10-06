@@ -23,6 +23,8 @@
 - [Blog index](https://cityyoyo.com/blog/): All posts.
 - [Best City Audio Tour Apps in 2026: Compared Side by Side](https://cityyoyo.com/blog/best-city-audio-tour-apps.html): Honest comparison of CityYoYo against Rick Steves Audio Europe, VoiceMap, Izi.Travel, and GPSmyCity, covering offline support, languages, pricing, and content depth.
 - [I Was Waiting for Ramen in a Tokyo Alley. That's How This App Was Born.](https://cityyoyo.com/blog/tokyo-ramen-alley-origin-story.html): The origin story of CityYoYo.
+- [No City Limits — Real Travel Stats from CityYoYo](https://cityyoyo.com/blog/no-city-limits-stats.html): Real-usage numbers from CityYoYo tours — 23 countries, 69 cities, 333 AI tours, and a 2.3-second median from tapping a place to hearing narration — with a per-city sample table. Switchable between all six languages.
+- [What Japan Taught Me About Leaving Gaps in My Itinerary](https://cityyoyo.com/blog/japan-trip-leave-gaps.html): A travel essay on leaving unplanned time in Kyoto and Tokyo, and what turned up in it.
 - [Do You Need a VPN for a China Travel App? And Other Real Questions](https://cityyoyo.com/blog/china-travel-app-vpn-language-questions.html): Answers on VPN-free use, translating Chinese place names and narration, uncurated place coverage, and a categorized answer to "best China travel app," for ChinaWalk — CityYoYo's China-focused sister app.
 
 ## Policies
